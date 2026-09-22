@@ -576,9 +576,9 @@ function getStore(){ return load('mala4w_store',''); }
 // ===== GITHUB GIST SYNC =====
 // 雲端資料 Gist：讀取免 token（任何裝置打開即自動同步）；寫入才需 token（只存在本機 localStorage，不進公開原始碼）
 // ⚠️ 四週變形版必須用「另一個」Gist。留空＝純本機模式（不同步、不輪詢、不上傳），
-//    避免誤連到月曆版那份資料把班表互相覆蓋。要開雲端同步請自建一個新的 public Gist，
-//    檔名 mala-schedule-4w.json，再把 ID 填進這裡。
-const DEFAULT_GIST_ID='';
+//    避免誤連到月曆版那份資料把班表互相覆蓋。
+//    2026-09-22 已建專屬 Gist（檔名 mala-schedule-4w.json），與月曆版的 1f7ecf0b… 是不同兩顆。
+const DEFAULT_GIST_ID='b041c353dc625d5a37e005cd6b9056a1';
 // 本版自己的部署網址。QR／啟用編輯連結都用它——指到月曆版會把 token 帶去另一套。
 const APP_URL_4W='https://eason0728.github.io/mala-schedule-4w/';
 function getGistCfg(){ try{return JSON.parse(localStorage.getItem('mala4w_gist_cfg')||'null');}catch{return null;} }
