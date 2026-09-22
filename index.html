@@ -1,0 +1,3261 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- mala 排班 icon（內嵌 base64，A 近黑#231815+金黃#FABE00；配色慣例見 mala-webapp-icon-convention）-->
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEz0lEQVR42u2Wy44dVxWGv7V2VZ06F/fF7XaChdS5kIABQQIzJCSEQELM4AGQ4AkQIxgwYghixIyHYMAgE5hEQQhhKVwdQA7EF+x2+nL6nK77viwGp+20RdshEZInvaSSapdUWp/2/v/9L3nx2W3jKZbylOsc4BzgqQNkT6QTAQyz1buIAPCobw1BTq0MDBKGGCBCMvtgAAokzI5DDKCpULG+HySkJGJmIqiAgJiq4GM6+VOSiOBUKZ0SVUgknahmsOJ5XwAF+mQh0yx8bXsr+8xkWly3IF/+4qsWem+LtrNu6Kl6TzUEusFzef0CuROZlaVuTUpZn4xlUhby89feSOHoOP6+WvZmMS9EXHoSgAp0MYVnymn63s5OeXU6JYVIHVq+8blPSpllq71OQKYcLSt2FxWf2LkC3gPy8IBqH/j1dKLf3NjSP3Vt/tN3/tUvfU8u4uwsAAGiWZpkRfz+88+PXixLFiHQ9Z56lDGESNcNEEFmwkgz7h4s6S3SVQ2t9w81kqty0PeEIdC6xKuzGd/deW70o7dv9JD0pN2jLlARqpjCV7YuZR8bj5mHwEiV4xDY2pgxUyB41ALlCxk6RIIfWM8dRI9LCZciGgO5Req2RUJg5Bz7g+eV2YwvbGy6KsbgRP7bhsmMQp29cuGCDikhQKHK7jDwzOYMHTqsaXHTiLuoxHlN3dbMxAhtA0OH9avH+YH9wzmTZIgKTiAZfH5tzaloslM+eg8AKNXJRpZLxABBzLhnkZe2LuCbBvoeJJJtjejpGZYNYxKxe6956js0DNw/mDNBTqy8suXFPBcnymlXZo+qP1kVA2IjMoV57xkmOR9fG1MvK3TsYBzAPN3LGdN/K1no6Xxcnb+BmZHUuLc353JeEE+6CbAM0UJKlJk8hNDTDhhS5Hpdp0KFQoS/VBUvXdlgPXr8fI7VDRKWDG/d5NJziaufnuLzFuoGa2qsrRHf0zQ19/YXXB4V9ClhQCbCX6sqJJKc0uBpDcBYJX9tb8/f7gdGCDfN86XLa9R7h8hRBXZMuLVP/+Yd/Jt38H+/S/5Ch7XHpKMl1nVkw8D9wwW+HljPc7qU2Mgy/tm2vH64H6dOM7MzNGBALqJz3+nPbt/yt7qBjZFjq2vpDufY4RK3eQR6gMUlFHvkLzcQDrDqCNuf45fHTIaO3924zRUtmOWOS1nOjbbjJzffGdoUnCJqj7uIEjBRzf92vBh+8PY/+qvr01zqNU2LGhsAP8dtO4QW6zq0dITdknhrRMwdpR+433f89s6Cr29u88fjij9XVfzlu/fDMngtVXJ7v6t45QYpmtDH3+z1/S/uTEbf2Sx173igfathurOLrrVIEYnLkvbaR/FNwWwWcJ3xwxu78Y15F6/NF/bu0FsTg05U87GKpjOyQB43lK4CCQuJ4dvb6+5b27PsWTLc1TnuU0fEOiP84SLcnUJhXG+9/Xh36V9fVjYWsoRpLip6koaPy0N50lT8QKuLaMPOqLCvro/1s27iPuKclCIsNXLThnSt6uOvlk2qQszWMsmScUZsfwiAB+UE+mTWJAuqksYq5CLWJpM+Goq5mdPMCUT7Pw4kDyoa5CKymUmOrSwbzSiBSSaAEO2DN/+fAR5s5+kGcsa386H0HOAc4MPUfwDXtrbLzuxB9AAAAABJRU5ErkJggg==">
+<meta name="apple-mobile-web-app-title" content="排班">
+<script>
+/* 四週變形版預設純本機（NO_GIST），用檔案直接開就能用，
+   所以不做 file:// 轉址——月曆版那段會把人彈去另一套，兩套並行時絕不能留。 */
+</script>
+<title>麻的🔥小辛辣 排班系統（四週變形版）</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --red:#e74c3c;--red-dark:#c0392b;--bg:#f5f5f5;--white:#fff;
+  --border:#ddd;--text:#333;--gray:#888;--green:#27ae60;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+/* NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom)}
+.nav-btn{flex:1;padding:8px 0 6px;text-align:center;cursor:pointer;color:var(--gray);border:none;background:none;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.nav-btn .ico{font-size:22px}
+.nav-btn.active{color:var(--red)}
+/* PAGES */
+.page{display:none;padding-bottom:70px}
+.page.active{display:block}
+/* HEADER */
+.hdr{background:var(--red);color:#fff;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50}
+.hdr h1{font-size:17px;font-weight:700}
+.hdr-btn{background:rgba(255,255,255,0.2);border:none;color:#fff;padding:6px 12px;border-radius:6px;font-size:13px;cursor:pointer}
+/* LOGO BAR */
+.logo-bar{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+/* MONTH NAV */
+.month-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:59px;z-index:40}
+.month-nav .mnav-btn{background:none;border:1px solid var(--border);width:36px;height:36px;border-radius:8px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.month-nav .month-label{font-size:18px;font-weight:700}
+/* SCHEDULE TABLE */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sch-tbl{border-collapse:collapse;font-size:12px;white-space:nowrap}
+.sch-tbl th,.sch-tbl td{border:1px solid #ccc;padding:6px 5px;text-align:center;min-width:34px}
+.sch-tbl .sticky-col{position:sticky;left:0;z-index:5;background:#fff;min-width:118px;max-width:118px;text-align:left;padding:8px 10px;font-weight:600;font-size:13px}
+.emp-cell-name{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.emp-cell-sub{font-size:10px;color:var(--gray);line-height:1.7;font-weight:400}
+.emp-cell-leave{font-size:10px;color:#27ae60;font-weight:600;line-height:1.7}
+.emp-cell-req{font-size:10px;color:#e67e22;font-weight:600;line-height:1.7}
+.sch-tbl .hdr-row th{background:#f0f0f0;font-weight:600;font-size:11px;position:sticky;top:0;z-index:10;padding:6px 4px;line-height:1.4}
+.sch-tbl .hdr-row .sticky-col{z-index:15;background:#f0f0f0}
+.day-sat,.day-sun,.day-hol{color:#e74c3c}
+.shift-cell{cursor:pointer;border-radius:2px;font-weight:600;min-width:34px;height:38px;line-height:38px;font-size:13px}
+.shift-cell:active{opacity:0.7}
+/* 指定休假：紅色斜線 */
+.diag-off{background-image:linear-gradient(to top right,transparent calc(50% - 1px),#e74c3c calc(50% - 1px),#e74c3c calc(50% + 1px),transparent calc(50% + 1px))}
+/* SHIFT COLORS */
+.s-A{background:#FFE066}
+.s-B{background:#FFD700}
+.s-C{background:#90EE90}
+.s-C2{background:#7FD9A0}
+.s-D{background:#87CEEB}
+.s-D1{background:#ADD8E6}
+.s-E{background:#DDA0DD}
+.s-F{background:#FFA07A;color:#c0392b}
+.s-H{background:#FFB6C1}
+.s-休{background:#f5f5f5;color:#aaa}
+.s-國{background:#ff7675;color:#fff}
+.s-空{background:#fff;color:#ccc}
+/* STAT BAR */
+.stat-bar{display:flex;overflow-x:auto;padding:8px 12px;gap:8px;background:#fff;border-bottom:1px solid var(--border)}
+.stat-chip{flex:0 0 auto;background:#f9f9f9;border:1px solid var(--border);border-radius:8px;padding:6px 12px;text-align:center;min-width:70px}
+.stat-chip .sv{font-size:16px;font-weight:700;color:var(--red)}
+.stat-chip .sl{font-size:10px;color:var(--gray)}
+/* CARDS */
+.card{background:#fff;border-radius:10px;margin:12px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+/* EMP LIST */
+.emp-item{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.emp-item:last-child{border-bottom:none}
+.emp-avatar{width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+.emp-info{flex:1;margin:0 12px}
+.emp-info .name{font-size:15px;font-weight:600}
+.emp-info .sub{font-size:12px;color:var(--gray);margin-top:2px}
+.emp-actions{display:flex;gap:8px}
+/* SALARY */
+.sal-item{padding:14px 0;border-bottom:1px solid var(--border)}
+.sal-item:last-child{border-bottom:none}
+.sal-name{font-size:15px;font-weight:600;margin-bottom:6px}
+.sal-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.sal-tag{font-size:11px;background:#f5f5f5;padding:3px 8px;border-radius:20px;color:var(--gray)}
+.sal-total{font-size:18px;font-weight:700;color:var(--green)}
+.sal-deduct{font-size:12px;color:#e74c3c;margin-top:2px}
+/* BUTTONS */
+.btn{padding:10px 18px;border-radius:8px;border:none;cursor:pointer;font-size:14px;font-weight:500}
+.btn-primary{background:var(--red);color:#fff}
+.btn-outline{background:#fff;color:var(--red);border:1px solid var(--red)}
+.btn-sm{padding:5px 12px;font-size:12px;border-radius:6px}
+.btn-danger{background:#fff;color:#e74c3c;border:1px solid #e74c3c}
+.btn-ghost{background:#f5f5f5;color:var(--text);border:none}
+.fab{position:fixed;bottom:80px;right:16px;width:54px;height:54px;border-radius:50%;background:var(--red);color:#fff;font-size:28px;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(231,76,60,.4);display:flex;align-items:center;justify-content:center;z-index:90}
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;overflow-y:auto;align-items:flex-end}
+.overlay.show{display:flex}
+.modal{background:#fff;border-radius:16px 16px 0 0;padding:20px;width:100%;max-height:92vh;overflow-y:auto}
+.modal-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.modal-hdr h2{font-size:18px;font-weight:700}
+.modal-close{font-size:24px;cursor:pointer;color:var(--gray);background:none;border:none;padding:0 4px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:13px;color:var(--gray);margin-bottom:5px}
+.form-group input,.form-group select{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:8px;font-size:15px;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--red)}
+.form-row{display:flex;gap:10px}
+.form-row .form-group{flex:1}
+/* SHIFT PICKER */
+.shift-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:8px 0}
+.sp-btn{padding:10px 4px;border-radius:8px;border:2px solid transparent;cursor:pointer;font-size:13px;font-weight:700;text-align:center;transition:.15s}
+.sp-btn.selected{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.sp-btn:active{transform:scale(.95)}
+/* SETTINGS */
+.shift-def-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.shift-badge{width:36px;height:28px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:12px}
+/* TOAST */
+.toast{position:fixed;top:24px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 20px;border-radius:20px;font-size:14px;z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+/* DIVIDER */
+.section-title{padding:12px 16px 4px;font-size:12px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+/* SUMMARY ROW */
+.count-row td{background:#fff9e6;font-weight:600}
+/* GROUP HEADER (正職/計時) */
+.grp-row td{font-weight:700;font-size:11px;padding:3px 6px;border-top:2px solid #aaa}
+.grp-row .sticky-col{font-weight:700}
+/* ANNOTATION ROW */
+.note-row td{background:#fffbe6;font-size:9px;color:#b8860b;font-weight:600;cursor:pointer;line-height:1.2;padding:2px 1px}
+.note-row .sticky-col{background:#fffbe6}
+.note-hol{color:#e74c3c}
+/* AUTO-SCHEDULE */
+.auto-day-btn{width:30px;height:30px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--border);background:#fff;color:#333;padding:0}
+.auto-day-btn.red-day{border-color:#e74c3c;color:#e74c3c}
+.auto-day-btn.selected{background:#e74c3c;color:#fff;border-color:#e74c3c}
+/* DELIVERY ROWS */
+.deliv-lunch td{background:#eaf7ee;font-size:10px;font-weight:600;cursor:pointer}
+.deliv-lunch .sticky-col{background:#eaf7ee;color:#1d9e75}
+.deliv-dinner td{background:#e8eefc;font-size:10px;font-weight:600;cursor:pointer}
+.deliv-dinner .sticky-col{background:#e8eefc;color:#3a5fcd}
+.deliv-cell:active{opacity:.6}
+</style>
+</head>
+<body>
+
+<!-- ===== PAGES ===== -->
+<!-- 班表 -->
+<div id="page-schedule" class="page active">
+  <div class="logo-bar">
+    <div style="display:flex;align-items:center;gap:6px">
+      <img id="logo-img" src="logo.png" alt="logo" style="height:42px" onerror="this.style.display='none';document.getElementById('logo-text').style.display='flex'">
+      <div id="logo-text" style="display:none;flex-direction:column;line-height:1.05">
+        <span style="font-size:21px;font-weight:900;color:#111;letter-spacing:1px">麻的🔥小辛辣</span>
+        <span style="font-size:9px;color:#c0392b;letter-spacing:2px;font-weight:600">MADE · SIAO SIN-LA</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:6px">
+      <button class="hdr-btn" style="background:#8e44ad;color:#fff" onclick="openAuto4W()">✨ 自動排班</button>
+      <button class="hdr-btn" style="background:var(--red);color:#fff" onclick="exportPDF()">📄 匯出</button>
+    </div>
+  </div>
+  <div class="month-nav">
+    <button class="mnav-btn" onclick="changeMonth(-1)">‹</button>
+    <div style="text-align:center">
+      <div class="month-label" id="month-label"></div>
+      <div id="store-label" style="font-size:12px;color:var(--gray);cursor:pointer;margin-top:2px" onclick="editStore()"></div>
+    </div>
+    <button class="mnav-btn" onclick="changeMonth(1)">›</button>
+  </div>
+  <div style="display:flex;gap:8px;padding:6px 12px;background:#fff;border-bottom:1px solid var(--border)">
+    <button class="btn btn-outline btn-sm" style="flex:1" onclick="openDelivImport()">📋 匯入外送</button>
+    <button class="btn btn-danger btn-sm" style="flex:1" onclick="clearDayShifts()">🗑 清除指定日期</button>
+    <button class="btn btn-danger btn-sm" style="flex:1" onclick="clearMonthShifts()">🗑 清除當月</button>
+  </div>
+  <div class="stat-bar" id="stat-bar"></div>
+  <div id="shift-legend" style="display:flex;overflow-x:auto;padding:6px 12px;gap:6px;background:#fafafa;border-bottom:1px solid var(--border);-webkit-overflow-scrolling:touch"></div>
+  <div id="abnormality-bar" style="display:none;padding:8px 12px;background:#fff8e1;border-bottom:2px solid #f39c12"></div>
+  <div class="tbl-wrap">
+    <table class="sch-tbl" id="sch-table"></table>
+  </div>
+  <div id="sch-summary"></div>
+  <div id="sch-4w"></div>
+</div>
+
+<!-- 員工 -->
+<div id="page-employees" class="page">
+  <div class="hdr"><h1>👥 員工管理</h1></div>
+  <div class="card" id="emp-list"></div>
+  <button class="fab" onclick="openEmpModal()">＋</button>
+</div>
+
+<!-- 薪資 -->
+<div id="page-salary" class="page">
+  <div class="hdr">
+    <h1>💰 薪資計算</h1>
+    <button class="hdr-btn" onclick="exportSalaryPDF()">📄 匯出</button>
+  </div>
+  <div class="month-nav">
+    <button class="mnav-btn" onclick="changeSalMonth(-1)">‹</button>
+    <span class="month-label" id="sal-month-label"></span>
+    <button class="mnav-btn" onclick="changeSalMonth(1)">›</button>
+  </div>
+  <div id="salary-content"></div>
+</div>
+
+<!-- 設定 -->
+<div id="page-settings" class="page">
+  <div class="hdr"><h1>⚙️ 設定</h1></div>
+  <div class="section-title">班別定義</div>
+  <div class="card" id="shift-defs"></div>
+  <div class="section-title">加班費規則（台灣勞基法）</div>
+  <div class="card">
+    <div class="form-group"><label>正常工時（小時/日）</label><input type="number" id="set-regular-hours" value="8" min="1" max="12" onchange="saveSetting('regularHours',this.value)"></div>
+    <div class="form-row">
+      <div class="form-group"><label>前2小時加班倍率</label><input type="number" id="set-ot1" step="0.01" value="1.33" onchange="saveSetting('ot1',this.value)"></div>
+      <div class="form-group"><label>超過2小時倍率</label><input type="number" id="set-ot2" step="0.01" value="1.67" onchange="saveSetting('ot2',this.value)"></div>
+    </div>
+    <div class="section-title" style="padding:8px 0 4px;font-size:11px">國定假日加班</div>
+    <div class="form-group"><label>國定假日倍率</label><input type="number" id="set-hol" step="0.01" value="2.00" onchange="saveSetting('holRate',this.value)"></div>
+  </div>
+  <div class="section-title">🔒 班表鎖定</div>
+  <div class="card">
+    <div style="font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:10px">
+      排定好的月份鎖起來，就不會在手機上被誤觸改掉。鎖定會同步到所有裝置。
+    </div>
+    <div id="lock-list"></div>
+  </div>
+  <div class="section-title">☁️ 雲端同步</div>
+  <div class="card" id="gist-setting-card">
+    <div id="gist-status" style="font-size:13px;margin-bottom:12px;color:var(--gray)">⚫ 未連線</div>
+
+
+    <!-- 可編輯（已設定 token）：上傳 / 解除 / QR -->
+    <div id="gist-editor-ui" style="display:none">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-ghost" style="flex:1" onclick="pushToGist(true)">⬆ 上傳此裝置資料</button>
+        <button class="btn btn-danger btn-sm" onclick="disconnectGist()">解除編輯權限</button>
+      </div>
+      <div style="margin-top:12px;padding:10px;background:#f9f9f9;border-radius:8px;font-size:12px;color:var(--gray);line-height:1.8">
+        其他裝置打開連結即可<b>自動讀取</b>同一份資料，免設定。<br>
+        若要讓<b>另一台裝置也能編輯</b>：用下面按鈕把啟用連結傳給它，或用它掃下方 QR code。
+      </div>
+      <button class="btn btn-ghost" style="width:100%;margin-top:10px" onclick="shareGistLink()">🔗 複製／分享啟用編輯連結</button>
+      <div id="gist-qr" style="text-align:center;margin-top:10px"></div>
+    </div>
+
+    <!-- 唯讀（未設定 token）：輸入 token 取得編輯權限 -->
+    <div id="gist-setup-ui">
+      <div style="font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:10px">
+        此裝置目前為<b>唯讀模式</b>，會自動讀取雲端最新資料。<br>
+        要在此裝置<b>編輯並上傳</b>，請貼上 GitHub Token（只需一次）：<br>
+        <span style="font-size:11px">取得方式：github.com/settings/tokens → Generate new token (classic) → 勾選 <b>gist</b></span>
+      </div>
+      <div class="form-group" style="margin-bottom:12px">
+        <label style="font-size:12px">GitHub Token</label>
+        <input id="input-gist-token" type="password" placeholder="ghp_xxxxxxxxxxxx" style="font-size:13px">
+      </div>
+      <button class="btn btn-primary" style="width:100%" onclick="connectGist()">🔓 啟用編輯</button>
+    </div>
+  </div>
+
+  <div class="section-title">💾 資料備份／還原</div>
+  <div class="card">
+    <div style="font-size:12px;color:var(--gray);line-height:1.8;margin-bottom:12px">
+      匯出＝把全部資料（員工、各月班表、外送、設定…）存成一個檔案。<br>
+      匯入＝用備份檔取代目前資料；<b>若此裝置已啟用編輯，匯入後會自動發佈到雲端</b>，其他裝置就會同步。
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn btn-ghost" style="flex:1" onclick="exportBackup()">⬇ 匯出備份</button>
+      <button class="btn btn-primary" style="flex:1" onclick="document.getElementById('import-backup-file').click()">⬆ 匯入備份</button>
+    </div>
+    <input type="file" id="import-backup-file" accept="application/json,.json" style="display:none" onchange="importBackup(this)">
+  </div>
+
+  <div class="section-title">✨ 自動排班規則</div>
+  <div class="card" id="auto-rules-list"></div>
+
+  <div class="section-title">📋 每日班別需求</div>
+  <div class="card" id="day-req-card"></div>
+
+  <div class="section-title">關於</div>
+  <div class="card" style="color:var(--gray);font-size:13px;line-height:1.8">
+    <p>麻的🔥小辛辣 排班系統 v1.0</p>
+    <button class="btn btn-danger btn-sm" style="margin-top:12px" onclick="clearAllData()">清除所有資料</button>
+  </div>
+</div>
+
+<!-- ===== BOTTOM NAV ===== -->
+<nav class="bottom-nav">
+  <button class="nav-btn active" onclick="showPage('schedule',this)"><span class="ico">📅</span>班表</button>
+  <button class="nav-btn" onclick="showPage('employees',this)"><span class="ico">👥</span>員工</button>
+  <button class="nav-btn" onclick="showPage('salary',this)"><span class="ico">💰</span>薪資</button>
+  <button class="nav-btn" onclick="showPage('settings',this)"><span class="ico">⚙️</span>設定</button>
+</nav>
+
+<!-- ===== MODALS ===== -->
+<!-- 員工 Modal -->
+<div class="overlay" id="emp-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2 id="emp-modal-title">新增員工</h2>
+      <button class="modal-close" onclick="closeModal('emp-overlay')">✕</button>
+    </div>
+    <input type="hidden" id="emp-id">
+    <div class="form-row">
+      <div class="form-group"><label>姓名 *</label><input type="text" id="emp-name" placeholder="張小明"></div>
+      <div class="form-group"><label>到職日 *</label><input type="date" id="emp-hire"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>聯絡電話</label><input type="tel" id="emp-phone" placeholder="0912345678"></div>
+      <div class="form-group"><label>生日</label><input type="date" id="emp-birthday"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>時薪（元）*</label><input type="number" id="emp-wage" placeholder="183" min="0"></div>
+      <div class="form-group"><label>底薪（元）</label><input type="number" id="emp-base" placeholder="0" min="0"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>保險自負額</label><input type="number" id="emp-ins" placeholder="0" min="0"></div>
+      <div class="form-group"><label>宿舍費</label><input type="number" id="emp-dorm" placeholder="0" min="0"></div>
+    </div>
+    <div class="form-group"><label>特休額度（天，留空依到職自動計算）</label><input type="number" id="emp-leave" min="0" step="0.5" placeholder="自動"></div>
+    <div class="section-title" style="padding:4px 0">津貼／獎金（每月固定加給）</div>
+    <div class="form-row">
+      <div class="form-group"><label>加班費（元/時）</label><input type="number" id="emp-otrate" min="0" placeholder="留空依勞基法"></div>
+      <div class="form-group"><label>職能津貼</label><input type="number" id="emp-skill" placeholder="0" min="0"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>全勤獎金</label><input type="number" id="emp-attend" placeholder="0" min="0"></div>
+      <div class="form-group"><label>夜間津貼</label><input type="number" id="emp-night" placeholder="0" min="0"></div>
+    </div>
+    <div class="form-group"><label>店長津貼</label><input type="number" id="emp-mgr" placeholder="0" min="0"></div>
+    <div class="form-group">
+      <label><input type="checkbox" id="emp-fulltime" style="width:auto;margin-right:6px">正職員工（顯示當月應出勤時數）</label>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('emp-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1" onclick="saveEmployee()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 班別 Picker -->
+<div class="overlay" id="shift-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2 id="shift-modal-title">選擇班別</h2>
+      <button class="modal-close" onclick="closeModal('shift-overlay')">✕</button>
+    </div>
+    <div class="shift-grid" id="shift-picker-grid"></div>
+    <div style="margin-top:8px;padding:8px;background:#f9f9f9;border-radius:8px;font-size:12px;color:var(--gray);text-align:center" id="shift-info-box"></div>
+    <div style="display:flex;gap:10px;margin-top:12px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('shift-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1" onclick="applyShift()">確定</button>
+    </div>
+  </div>
+</div>
+
+<!-- 班別設定 Modal -->
+<div class="overlay" id="shiftdef-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2 id="shiftdef-title">編輯班別</h2>
+      <button class="modal-close" onclick="closeModal('shiftdef-overlay')">✕</button>
+    </div>
+    <input type="hidden" id="sd-code">
+    <div class="form-row">
+      <div class="form-group"><label>班別代碼</label><input type="text" id="sd-name" placeholder="A" maxlength="3"></div>
+      <div class="form-group"><label>工時（小時）</label><input type="number" id="sd-hours" step="0.5" min="0" max="24"></div>
+    </div>
+    <div class="form-group"><label>時間說明</label><input type="text" id="sd-time" placeholder="15:00～23:30"></div>
+    <div class="form-row">
+      <div class="form-group"><label>背景色</label><input type="color" id="sd-color" value="#FFE066"></div>
+      <div class="form-group"><label>文字色</label><input type="color" id="sd-textcolor" value="#333333"></div>
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" id="sd-isoff" style="width:auto;margin-right:6px">這是休假/不計工時</label>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn btn-outline" style="flex:1" onclick="closeModal('shiftdef-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1" onclick="saveShiftDef()">儲存</button>
+    </div>
+  </div>
+</div>
+
+<!-- 自動排班 Modal -->
+<div class="overlay" id="auto-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>✨ 自動排班</h2>
+      <button class="modal-close" onclick="closeModal('auto-overlay')">✕</button>
+    </div>
+    <div id="auto-modal-body"></div>
+    <button class="btn btn-outline" style="width:100%;margin-top:14px" onclick="applyDesignatedOnly()">📌 只代入指休/指定上班（不生成班表）</button>
+    <div style="display:flex;gap:10px;margin-top:10px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('auto-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1;background:#8e44ad" onclick="runAutoSchedule()">生成班表</button>
+    </div>
+  </div>
+</div>
+
+<!-- 四週變形自動排班 Modal -->
+<div class="overlay" id="auto4w-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>✨ 自動排班（四週變形）</h2>
+      <button class="modal-close" onclick="closeModal('auto4w-overlay')">✕</button>
+    </div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>要生成哪一期（28 天）</label>
+      <select id="auto4w-cycle" onchange="renderAuto4WBody(+this.value)"
+        style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;width:100%"></select>
+    </div>
+    <div id="auto4w-body"></div>
+    <button class="btn btn-outline" style="width:100%;margin-top:14px" onclick="applyDesignated4W()">📌 只代入指休/指定上班（不生成班表）</button>
+    <div style="display:flex;gap:10px;margin-top:10px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('auto4w-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1;background:#8e44ad" onclick="runAuto4W()">生成本期班表</button>
+    </div>
+  </div>
+</div>
+
+<!-- 外送匯入 Modal -->
+<div class="overlay" id="deliv-import-overlay">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>📋 匯入外送紀錄</h2>
+      <button class="modal-close" onclick="closeModal('deliv-import-overlay')">✕</button>
+    </div>
+    <div class="form-group">
+      <label>貼上文字（格式：日期 棟別 餐別，例如「7/9、7/10台元D棟午餐」「7/13~7/15竹科U棟午餐」）</label>
+      <textarea id="deliv-import-text" rows="8" style="width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:8px;font-size:13px;font-family:inherit"></textarea>
+    </div>
+    <div style="font-size:12px;color:var(--gray);margin-bottom:8px">會套用目前畫面上的年份（<span id="deliv-import-year"></span>），依文字中的月份寫入對應月份的外送欄位，已有資料的日期會被覆蓋。</div>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal('deliv-import-overlay')">取消</button>
+      <button class="btn btn-primary" style="flex:1" onclick="runDelivImport()">匯入</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== DEFAULT DATA =====
+const DEFAULT_SHIFTS = {
+  A:  {name:'A班', time:'15:00～23:30', hours:8.5, breakH:0.5, color:'#FFE066', textColor:'#333', isOff:false},
+  B:  {name:'B班', time:'16:00～23:30', hours:7.5, breakH:0,   color:'#FFD700', textColor:'#333', isOff:false},
+  C:  {name:'C班', time:'17:00～22:30', hours:5.5, breakH:0,   color:'#90EE90', textColor:'#333', isOff:false},
+  C2: {name:'C2班',time:'17:30～23:30', hours:6.0, breakH:0,   color:'#7FD9A0', textColor:'#333', isOff:false},
+  D:  {name:'D班', time:'18:00～22:30', hours:4.5, breakH:0,   color:'#87CEEB', textColor:'#333', isOff:false},
+  D1: {name:'D1班',time:'18:30～22:30', hours:4.0, breakH:0,   color:'#ADD8E6', textColor:'#333', isOff:false},
+  E:  {name:'E班', time:'09:00～17:30', hours:8.5, breakH:0.5, color:'#DDA0DD', textColor:'#333', isOff:false},
+  F:  {name:'F班', time:'11:00～14:00\n17:30～22:30', hours:8.0, breakH:0, color:'#FFA07A', textColor:'#c0392b', isOff:false},
+  H1: {name:'H1班', time:'11:00～14:00\n17:00～22:00', hours:8.0, breakH:0, color:'#FFB6C1', textColor:'#333', isOff:false},
+  E10:{name:'早長班', time:'09:00～20:00', hours:10, breakH:1, color:'#C5A3E0', textColor:'#333', isOff:false},
+  A10:{name:'晚長班', time:'13:00～24:00', hours:10, breakH:1, color:'#F0C040', textColor:'#333', isOff:false},
+  '例': {name:'例假', time:'例假', hours:0, breakH:0, color:'#F8BBD0', textColor:'#AD1457', isOff:true},
+  '多': {name:'空班日', time:'空班（工時已移出）', hours:0, breakH:0, color:'#E0E0E0', textColor:'#616161', isOff:true},
+  '公休': {name:'公休', time:'－', hours:0, breakH:0, color:'#CFE2FF', textColor:'#1565C0', isOff:true},
+  '休': {name:'休假', time:'－', hours:0, breakH:0, color:'#f5f5f5', textColor:'#aaa', isOff:true},
+  '特': {name:'特休', time:'特休假', hours:0, breakH:0, color:'#E8D5FF', textColor:'#7B2FBE', isOff:true},
+  '指': {name:'指定休', time:'指定休假', hours:0, breakH:0, color:'#FFD54F', textColor:'#e74c3c', isOff:true},
+  '國': {name:'國定假日', time:'國定假日', hours:0, breakH:0, color:'#ffe0e0', textColor:'#e74c3c', isOff:false},
+};
+// 每月預估營業額（圖片提供 5-12 月）；可於班表下方點擊修改
+// 營業額不寫進原始碼（這個 repo 是公開的）。在班表頁點「預估營業額 ✎」輸入，存本機並同步雲端。
+const DEFAULT_REVENUE={};
+
+// ===== STATE =====
+let state = {
+  curYear: new Date().getFullYear(),
+  curMonth: new Date().getMonth()+1,
+  salYear: new Date().getFullYear(),
+  salMonth: new Date().getMonth()+1,
+  pendingCell: null,
+  pendingShift: null,
+};
+
+// ===== STORAGE (localStorage + GitHub Gist sync) =====
+let _suppressPush=false;   // true while we write data programmatically (pull/init) so we never echo-push
+let _synced=false;         // becomes true after first successful cloud pull
+function load(key, def){ try{const v=localStorage.getItem(key);return v?JSON.parse(v):def;}catch{return def;} }
+function save(key,val){ localStorage.setItem(key,JSON.stringify(val)); if(!_suppressPush) scheduleGistPush(); }
+
+function getEmployees(){ return load('mala4w_employees',[]); }
+function saveEmployees(d){ save('mala4w_employees',d); }
+function getShifts(){ const m={...DEFAULT_SHIFTS,...load('mala4w_shifts',{})}; load('mala4w_hidden_shifts',[]).forEach(c=>delete m[c]); return m; }
+// 班別排序：英文字母班別依字母/數字順序，休假類（休特指國）固定排最後
+function sortedShiftEntries(shifts){
+  const isWork=c=>/^[A-Za-z]/.test(c);
+  const restOrder=['公休','休','特','指','國'];
+  const work=Object.entries(shifts).filter(([c])=>isWork(c)).sort((a,b)=>a[0].localeCompare(b[0],undefined,{numeric:true}));
+  const rest=Object.entries(shifts).filter(([c])=>!isWork(c)).sort((a,b)=>{
+    const ai=restOrder.indexOf(a[0]), bi=restOrder.indexOf(b[0]);
+    return (ai<0?99:ai)-(bi<0?99:bi);
+  });
+  return [...work,...rest];
+}
+// 班別時段顯示格式化：統一波浪號、把兩段以上時段用分隔符接起來，並把無冒號的 HHMM 補成 HH:MM。
+// 相容：預設 \n 分隔、舊資料無分隔相連、單段、以及使用者手打的 1700~2100（無冒號半形～）。
+function fmtShiftTime(t){
+  if(!t) return '';
+  let s=String(t).replace(/[~～]/g,'～').replace(/\n/g,'');
+  let ranges=s.match(/\d{1,2}:\d{2}～\d{1,2}:\d{2}/g);          // 標準 HH:MM～HH:MM
+  if(!ranges){
+    const raw=s.match(/\d{3,4}～\d{3,4}/g);                     // 無冒號，如 1700～2100
+    if(raw) ranges=raw.map(r=>r.replace(/(\d{1,2})(\d{2})(?=$|～)/g,'$1:$2'));
+  }
+  if(ranges && ranges.length) return ranges.join('　/　');
+  return String(t).replace(/\n/g,' ');
+}
+// 判斷時段是否含「時鐘時間」（17:00 或 1700 都算）→ 用來區分工作班 vs 國/公休/休/特/指
+function hasClockTime(t){ return /\d{1,2}[:：]?\d{2}/.test(String(t||'')); }
+function saveShifts(d){ save('mala4w_shifts',d); }
+function getSchedule(y,m){ return load(`mala4w_sch_${y}_${m}`,{}); }
+// ===== 班表鎖定（按月）=====
+// 已確定的班表鎖起來，避免手機上誤觸把班改掉。
+// 狀態存 mala4w_locks（`${y}_${m}` 陣列），走 save() → 會被 buildSnapshot 打包進雲端快照，
+// 所以一台裝置鎖起來，其他裝置同步後也是鎖的。
+function getLocks(){ const v=load('mala4w_locks',[]); return Array.isArray(v)?v:[]; }
+function isMonthLocked(y,m){ return getLocks().includes(`${y}_${m}`); }
+function setMonthLock(y,m,locked){
+  const key=`${y}_${m}`, locks=getLocks().filter(k=>k!==key);
+  if(locked) locks.push(key);
+  save('mala4w_locks', locks);
+}
+// 設定頁按鈕入口。鎖定一按就鎖；解鎖要二次確認（解鎖才是危險的方向）
+function toggleMonthLock(y,m){
+  // 唯讀裝置鎖了也傳不上雲端，30 秒後就被輪詢還原，等於沒鎖 → 直接擋住並說清楚
+  if(!IS_LOCAL_DEV && !getGistToken()){
+    showToast('此裝置為唯讀，請先到下方「雲端同步」啟用編輯才能鎖定班表', 5000);
+    return;
+  }
+  if(isMonthLocked(y,m)){
+    if(!confirm(`確定解除 ${y}年${m}月 的鎖定？解除後班表就能再被修改。`)) return;
+    setMonthLock(y,m,false);
+    showToast(`🔓 已解除 ${y}年${m}月 鎖定`);
+  } else {
+    setMonthLock(y,m,true);
+    showToast(`🔒 已鎖定 ${y}年${m}月 班表`);
+  }
+  renderSettings();
+  renderSchedule();
+}
+
+// 擋下編輯並提示；所有會改到班表的入口都先問過它
+function blockIfLocked(y,m){
+  if(!isMonthLocked(y,m)) return false;
+  showToast(`🔒 ${y}年${m}月 班表已鎖定，請先到 設定 → 班表鎖定 解除`, 4000);
+  return true;
+}
+
+function saveSchedule(y,m,d){
+  // 最後一道防線：所有寫入都經過這裡，鎖定月份一律拒絕
+  if(isMonthLocked(y,m)) return false;
+  save(`mala4w_sch_${y}_${m}`,d);
+  return true;
+}
+function getSettings(){ return {...{regularHours:8,ot1:1.33,ot2:1.67,holRate:2.0},...load('mala4w_settings',{})}; }
+function saveSetting(k,v){ const s=getSettings();s[k]=parseFloat(v)||v;save('mala4w_settings',s); }
+function getHolidays(y,m){ return load(`mala4w_hol_${y}_${m}`,[]); }
+function saveHolidays(y,m,d){ save(`mala4w_hol_${y}_${m}`,d); }
+function getNotes(y,m){ return load(`mala4w_notes_${y}_${m}`,{}); }
+function saveNotes(y,m,d){ save(`mala4w_notes_${y}_${m}`,d); }
+function getDelivery(y,m){ return load(`mala4w_deliv_${y}_${m}`,{lunch:{},dinner:{}}); }
+function saveDelivery(y,m,d){ save(`mala4w_deliv_${y}_${m}`,d); }
+function getRevenue(y,m){ const v=load(`mala4w_rev_${y}_${m}`,null); return v!==null?v:((DEFAULT_REVENUE[y]||{})[m]||0); }
+function saveRevenue(y,m,v){ save(`mala4w_rev_${y}_${m}`,v); }
+function getStore(){ return load('mala4w_store',''); }
+
+// ===== GITHUB GIST SYNC =====
+// 雲端資料 Gist：讀取免 token（任何裝置打開即自動同步）；寫入才需 token（只存在本機 localStorage，不進公開原始碼）
+// ⚠️ 四週變形版必須用「另一個」Gist。留空＝純本機模式（不同步、不輪詢、不上傳），
+//    避免誤連到月曆版那份資料把班表互相覆蓋。要開雲端同步請自建一個新的 public Gist，
+//    檔名 mala-schedule-4w.json，再把 ID 填進這裡。
+const DEFAULT_GIST_ID='';
+// 本版自己的部署網址。QR／啟用編輯連結都用它——指到月曆版會把 token 帶去另一套。
+const APP_URL_4W='https://eason0728.github.io/mala-schedule-4w/';
+function getGistCfg(){ try{return JSON.parse(localStorage.getItem('mala4w_gist_cfg')||'null');}catch{return null;} }
+function saveGistCfg(cfg){ localStorage.setItem('mala4w_gist_cfg', JSON.stringify(cfg)); }
+// 資料位置固定用內建 Gist，所有裝置（含曾連過舊 Gist 的）都匯流到同一份資料；cfg 只負責提供寫入用的 token
+function getGistId(){ return DEFAULT_GIST_ID; }
+function getGistToken(){ const c=getGistCfg(); return (c&&c.token)||''; }
+
+// Collect all mala4w_ keys into one JSON snapshot
+function buildSnapshot(){
+  const snap={};
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&k.startsWith('mala4w_')&&k!=='mala4w_gist_cfg'){
+      try{snap[k]=JSON.parse(localStorage.getItem(k));}catch{}
+    }
+  }
+  return snap;
+}
+
+// 本機測試版旗標：用 localhost / 127.0.0.1 開啟時為 true。
+// 此時完全不跟雲端同步（不自動拉、不輪詢、不上傳）→ 編輯只存本機、永遠不會被雲端還原。
+// 線上版（eason0728.github.io）為 false，維持雲端同步＋輪詢，多裝置共用。
+const NO_GIST = !DEFAULT_GIST_ID;   // 沒設 Gist＝純本機，絕不碰月曆版的資料
+const IS_LOCAL_DEV = NO_GIST || location.hostname==='localhost' || location.hostname==='127.0.0.1';
+
+// Debounced push (wait 2s after last change) — 僅在此裝置有 token（可編輯）時才上傳
+let _pushTimer=null;
+let _lastPushFailed=false; // 避免上傳連續失敗時 toast 洗版（只在狀態轉變時提示）
+let _lastPushErrKind='';   // 最近一次 push 失敗的原因：'auth'(401) / 'http'(其他狀態碼) / 'network'(例外)，給 connectGist 分辨訊息用
+let _initDone=false;       // init 完成才提示唯讀編輯，避免載入期間種子資料誤報
+let _readonlyWarnedAt=0;
+// 唯讀裝置（線上版、無 token）做了編輯 → 編輯只存本機、會被輪詢還原，明確提示（節流 8 秒）
+function warnReadOnlyEdit(){
+  const now=Date.now();
+  if(now-_readonlyWarnedAt<8000) return;
+  _readonlyWarnedAt=now;
+  showToast('⚠️ 此裝置為唯讀，編輯不會儲存（會被雲端還原）。請到 設定→雲端同步 先「啟用編輯」。', 6000);
+}
+function scheduleGistPush(){
+  if(IS_LOCAL_DEV) return;      // 本機測試版：絕不上傳，編輯只存本機
+  if(!getGistToken()){ if(_initDone) warnReadOnlyEdit(); return; }  // 唯讀裝置不上傳；init 後的編輯要提示不會儲存
+  clearTimeout(_pushTimer);
+  _pushTimer=setTimeout(()=>{ _pushTimer=null; pushToGist(false); }, 2000);
+}
+
+async function pushToGist(showMsg=true){
+  const token=getGistToken();
+  if(!token){ if(showMsg) showToast('此裝置為唯讀，請先啟用編輯'); return false; }
+  try{
+    const r=await fetch(`https://api.github.com/gists/${getGistId()}`,{
+      method:'PATCH',
+      headers:{'Authorization':'Bearer '+token,'Content-Type':'application/json'},
+      body:JSON.stringify({files:{"mala-schedule-4w.json":{content:JSON.stringify(buildSnapshot(),null,2)}}})
+    });
+    if(r.status===401){
+      // Token 無效或過期 → 退回唯讀，避免持續靜默失敗 + 被輪詢還原編輯。明確要求重新啟用。
+      _lastPushErrKind='auth';
+      localStorage.removeItem('mala4w_gist_cfg'); _lastPushFailed=false; updateGistStatus();
+      showToast('⚠️ 編輯權限失效（Token 無效或過期）。已改為唯讀，請重新「啟用編輯」並貼上有效 Token。', 7000);
+      return false;
+    }
+    if(!r.ok){
+      // 其他失敗（403 權限/額度、404 無權限、5xx…）：**一定要讓使用者看到**，不再靜默
+      _lastPushErrKind='http';
+      if(!_lastPushFailed){ _lastPushFailed=true; showToast(`⚠️ 自動儲存到雲端失敗（HTTP ${r.status}）。編輯先存在本機，請確認 Token 有 gist 寫入權限或檢查網路。`, 7000); }
+      return false;
+    }
+    _lastPushErrKind='';
+    if(_lastPushFailed){ _lastPushFailed=false; showToast('✅ 已恢復同步到雲端'); }
+    else if(showMsg){ showToast('✅ 已同步到雲端'); }
+    return true;
+  }catch(e){
+    // 網路等例外，自動儲存也要提示（首次失敗才提示，避免洗版）
+    _lastPushErrKind='network';
+    if(!_lastPushFailed){ _lastPushFailed=true; showToast('⚠️ 自動儲存到雲端失敗（'+(e.message||e)+'）。編輯先存在本機，請檢查網路。', 7000); }
+    return false;
+  }
+}
+
+// Gist 擁有者帳號：唯讀裝置走 raw 網址時需要它組出網址
+const GIST_OWNER='Eason0728';
+let _pullFailStreak=0;   // 連續拉取失敗次數（給設定頁狀態列用，不用 toast 洗版）
+
+// 取回雲端快照的文字內容。
+// ⚠️ 唯讀裝置一律走 gist raw（gist.githubusercontent.com），不要走 api.github.com：
+// 匿名呼叫 GitHub API 的額度是「每個 IP 每小時 60 次」，而輪詢是每 30 秒一次（120 次/小時），
+// 店裡幾台手機接同一個 WiFi 還會共用同一份額度 → 幾分鐘就爆，之後 API 一律回 403，
+// 裝置就停在舊資料、而且輪詢是 silent 的沒任何提示＝「打開網址看不到別人改的內容」。
+// raw 網址不吃那份額度（回應沒有 x-ratelimit 標頭），但有 5 分鐘 CDN 快取，
+// 所以一定要帶 cache-buster query，否則同樣讀到舊的。
+// 有 token 的裝置維持走 API（額度 5000/小時、內容最即時）。
+async function fetchSnapshotText(){
+  const gistId=getGistId(), token=getGistToken();
+  if(token){
+    const r=await fetch(`https://api.github.com/gists/${gistId}`,{
+      headers:{'Authorization':'Bearer '+token}, cache:'no-store' });
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    return (await r.json()).files?.['mala-schedule-4w.json']?.content || null;
+  }
+  try{
+    const r=await fetch(`https://gist.githubusercontent.com/${GIST_OWNER}/${gistId}/raw/mala-schedule-4w.json?t=${Date.now()}`,{ cache:'no-store' });
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    return await r.text();
+  }catch(e){
+    // raw 挂掉才退回匿名 API 當備援（額度有限，只在 raw 失敗時用）
+    const r=await fetch(`https://api.github.com/gists/${gistId}`,{ cache:'no-store' });
+    if(!r.ok) throw new Error(`HTTP ${r.status}`);
+    return (await r.json()).files?.['mala-schedule-4w.json']?.content || null;
+  }
+}
+
+async function pullFromGist(silent){
+  if(NO_GIST) return;   // 純本機模式
+  // Never clobber unsaved local edits: if a push is pending, skip this pull
+  if(_pushTimer){ return; }
+  if(!silent) showToast('同步中...', 2000);
+  try{
+    const content=await fetchSnapshotText();
+    if(!content) return;
+    const snap=JSON.parse(content);
+    if(snap._init) return;
+    _suppressPush=true;
+    Object.entries(snap).forEach(([k,v])=>{
+      localStorage.setItem(k, JSON.stringify(v));
+    });
+    _suppressPush=false;
+    _synced=true;
+    _pullFailStreak=0;
+    renderSchedule(); renderEmployees(); renderSalary();
+    // 設定頁的班別／加班規則／店名也來自雲端快照，停在設定頁時一併重繪
+    if(document.querySelector('.page.active')?.id==='page-settings') renderSettings();
+    else updateGistStatus();
+    if(!silent) showToast('✅ 已從雲端同步');
+  }catch(e){
+    _suppressPush=false;
+    _pullFailStreak++;
+    // 背景輪詢連續失敗要讓使用者看得到，否則畫面停在舊資料卻毫無徵兆
+    if(silent){
+      if(_pullFailStreak===2) showToast('⚠️ 讀取雲端失敗，畫面可能不是最新（'+e.message+'）', 6000);
+      updateGistStatus();
+    } else showToast('⚠️ 同步失敗：'+e.message);
+  }
+}
+
+// Polling wrapper: skip if local edits are pending (handled inside pullFromGist too)
+function startGistPolling(){ setInterval(()=>pullFromGist(true), 30000); }
+
+// ===== HELPERS =====
+function daysInMonth(y,m){ return new Date(y,m,0).getDate(); }
+function weekday(y,m,d){ return new Date(y,m-1,d).getDay(); } // 0=Sun
+function wd(n){ return ['日','一','二','三','四','五','六'][n]; }
+function fmt(n){ return String(n).padStart(2,'0'); }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2); }
+function monthKey(y,m){ return `${y}-${fmt(m)}`; }
+
+// 某月該顯示哪些員工：在職者永遠顯示；離職者只在「離職月(含)以前且該月有排班」的月份顯示
+function getEmployeesForMonth(y,m){
+  const sch=getSchedule(y,m);
+  const mk=monthKey(y,m);
+  return getEmployees().filter(e=>{
+    if(e.active!==false) return true;                            // 在職
+    if(e.termMonth && mk>e.termMonth) return false;              // 離職之後的月份 → 隱藏
+    const es=sch[e.id]; return es && Object.keys(es).length>0;   // 其餘月份：有排班才保留
+  });
+}
+
+function showToast(msg,ms=2000){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),ms);
+}
+
+function showPage(name, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  btn.classList.add('active');
+  if(name==='schedule') renderSchedule();
+  if(name==='employees') renderEmployees();
+  if(name==='salary') renderSalary();
+  if(name==='settings') renderSettings();
+}
+
+function openModal(id){ document.getElementById(id).classList.add('show'); }
+function closeModal(id){ document.getElementById(id).classList.remove('show'); }
+
+// ===== SCHEDULE PAGE =====
+function clearDayShifts(){
+  const y=state.curYear, m=state.curMonth;
+  if(blockIfLocked(y,m)) return;
+  const total=daysInMonth(y,m);
+  const input=prompt(`清除哪一天所有人的班別？\n請輸入日期（1～${total}）`);
+  if(input===null) return;
+  const day=parseInt(input);
+  if(!day||day<1||day>total){showToast('日期無效');return;}
+  if(!confirm(`確定清除 ${m}月${day}日 所有人的班別？`)) return;
+  const sch=getSchedule(y,m);
+  getEmployeesForMonth(y,m).forEach(emp=>{ if(sch[emp.id]) delete sch[emp.id][day]; });
+  saveSchedule(y,m,sch);
+  renderSchedule();
+  showToast(`已清除 ${m}/${day} 所有班別`);
+}
+
+function clearMonthShifts(){
+  const y=state.curYear, m=state.curMonth;
+  if(blockIfLocked(y,m)) return;
+  if(!confirm(`確定清除 ${y}年${m}月 所有人的班別？此操作無法復原！`)) return;
+  saveSchedule(y,m,{});
+  renderSchedule();
+  showToast('已清除當月所有班別');
+}
+
+function changeMonth(d){
+  state.curMonth+=d;
+  if(state.curMonth>12){state.curMonth=1;state.curYear++;}
+  if(state.curMonth<1){state.curMonth=12;state.curYear--;}
+  renderSchedule();
+}
+
+function renderSchedule(){
+  const y=state.curYear, m=state.curMonth;
+  // 鎖定的月份在標題直接掛 🔒，一眼看得出這個月不能改
+  document.getElementById('month-label').textContent=`${y} 年 ${m} 月${isMonthLocked(y,m)?' 🔒':''}`;
+  const st=getStore();
+  document.getElementById('store-label').textContent = st?`店別：${st}`:'＋ 設定店別';
+  const days=daysInMonth(y,m);
+  const emps=getEmployeesForMonth(y,m);
+  const sch=getSchedule(y,m);
+  const shifts=getShifts();
+  const holidays=getHolidays(y,m);
+
+  // Stat bar + legend + abnormality
+  renderStatBar(y,m,emps,sch,shifts,holidays);
+  renderShiftLegend(shifts);
+  renderAbnormalities();
+
+  // Table
+  const tbl=document.getElementById('sch-table');
+  let html='<thead><tr class="hdr-row"><th class="sticky-col" style="font-size:10px">員工／到職</th>';
+  for(let d=1;d<=days;d++){
+    const wk=weekday(y,m,d);
+    const isHol=holidays.includes(d);
+    const cls=isHol||wk===0||wk===6?'day-sun':'';
+    html+=`<th class="${cls}">${d}<br><span>${wd(wk)}</span></th>`;
+  }
+  html+='<th>天數</th><th>時數</th></tr></thead><tbody>';
+
+  // 提醒/節日 annotation row
+  const notes=getNotes(y,m);
+  html+='<tr class="note-row"><td class="sticky-col">提醒</td>';
+  for(let d=1;d<=days;d++){
+    const lbl=dayAnnotation(y,m,d,holidays,notes);
+    const isHol=holidays.includes(d);
+    html+=`<td class="${isHol?'note-hol':''}" onclick="editNote(${d})">${lbl||'　'}</td>`;
+  }
+  html+='<td></td><td></td></tr>';
+
+  // 外送 rows（緊接在提醒列下方）
+  const deliv=getDelivery(y,m);
+  let lunchCnt=0, dinnerCnt=0;
+  html+='<tr class="deliv-lunch"><td class="sticky-col">午餐外送</td>';
+  for(let d=1;d<=days;d++){
+    const v=deliv.lunch?.[d]||'';
+    if(v) lunchCnt++;
+    html+=`<td class="deliv-cell" onclick="editDelivery('lunch',${d})">${v||'　'}</td>`;
+  }
+  html+=`<td style="font-weight:700;color:#1d9e75">${lunchCnt}</td><td></td></tr>`;
+  html+='<tr class="deliv-dinner"><td class="sticky-col">晚餐外送</td>';
+  for(let d=1;d<=days;d++){
+    const v=deliv.dinner?.[d]||'';
+    if(v) dinnerCnt++;
+    html+=`<td class="deliv-cell" onclick="editDelivery('dinner',${d})">${v||'　'}</td>`;
+  }
+  html+=`<td style="font-weight:700;color:#3a5fcd">${dinnerCnt}</td><td></td></tr>`;
+
+  const renderEmpRow=(emp)=>{
+    const empSch=sch[emp.id]||{};
+    const hasAnyShift=Object.keys(empSch).length>0;  // 此人本月是否已開始排班
+    let restDays=0, totalH=0;
+    const hireStr=emp.hireDate?emp.hireDate.slice(0,7).replace('-','/'):'';
+    const entitle=emp.isFullTime?(emp.leaveQuota>0?emp.leaveQuota:calcLeaveEntitlement(emp.hireDate)):0;
+    const used=calcLeaveUsed(emp.id, y);
+    const remain=Math.max(entitle-used,0);
+    // 先跑日期迴圈算出實際排班工時 totalH，name cell 才能顯示「排班時數」
+    let dayCells='';
+    for(let d=1;d<=days;d++){
+      let code=empSch[d]||'';
+      // 計時人員：已開始排班後，空白日才視為休（未排班前保持空白）
+      if(!code && !emp.isFullTime && hasAnyShift) code='休';
+      const sh=shifts[code];
+      const wk=weekday(y,m,d), isHol=holidays.includes(d);
+      const colBg = isHol?'#f9cccc':((wk===0||wk===6)?'#dcdcdc':'#fff'); // 六日/國定假日網底（加深，與白色平日明顯區隔）
+      const isWorking = sh && !sh.isOff && code!=='國';
+      const isRest = (sh && sh.isOff) || code==='國';
+      let bg=colBg, tc='#ccc', cls='shift-cell', disp=code||'　';
+      if(sh){
+        if(isWorking){ tc='#000'; }                          // 班別：無網底、黑字（六日仍套用欄位網底）
+        else if(code==='休'){ tc='#e74c3c'; }                // 休：不套自己的網底，沿用欄位背景（白/週末/假日），紅字
+        else { bg=sh.color; tc='#e74c3c'; }                  // 其他休假類（特/指/國/公休）：保留網底、紅字
+      }
+      if(isWorking){ totalH+=calcWorkHours(sh); }
+      if(isRest){ restDays++; }
+      const isBirthday=emp.birthday&&emp.birthday.slice(5)===`${fmt(m)}-${fmt(d)}`;
+      if(isBirthday) bg='#FFB3C1';
+      dayCells+=`<td class="${cls}" style="background:${bg};color:${tc}" onclick="openShiftPicker('${emp.id}',${d})">${disp}</td>`;
+    }
+    // 正職資訊欄顯示「排班時數」（實際排班工時），取代原本的「應出時數」
+    let row=`<tr><td class="sticky-col">
+      <div class="emp-cell-name">${emp.name}</div>
+      <div class="emp-cell-sub">到職 ${hireStr}</div>
+      ${emp.isFullTime?`<div class="emp-cell-leave">特休剩 ${remain}天</div><div class="emp-cell-req">排班 ${totalH.toFixed(1)}h</div>`:''}
+    </td>${dayCells}<td style="background:#fdeaea;font-weight:600;color:#e74c3c">${restDays}</td><td style="background:#f9f9f9">${totalH.toFixed(1)}</td></tr>`;
+    return row;
+  };
+  // 分組：正職人員在上、計時人員在下，各自加上色塊標題列
+  const groups=[
+    ['正職人員', emps.filter(e=>e.isFullTime),  '#c0392b', '#fdecea'],
+    ['計時人員', emps.filter(e=>!e.isFullTime), '#1f6aa5', '#e8f1fb'],
+  ];
+  groups.forEach(([label,list,fg,bg])=>{
+    if(!list.length) return;
+    html+=`<tr class="grp-row"><td class="sticky-col" style="background:${bg};color:${fg}">${label}（${list.length}）</td>`;
+    for(let d=1;d<=days;d++) html+=`<td style="background:${bg}"></td>`;
+    html+=`<td style="background:${bg}"></td><td style="background:${bg}"></td></tr>`;
+    list.forEach(emp=>{ html+=renderEmpRow(emp); });
+  });
+
+  // 每日人數
+  html+='<tr class="count-row"><td class="sticky-col" style="background:#fff9e6">人數</td>';
+  let totalCount=0;
+  for(let d=1;d<=days;d++){
+    let cnt=0;
+    emps.forEach(emp=>{
+      const code=(sch[emp.id]||{})[d]||'';
+      const sh=shifts[code];
+      if(sh&&!sh.isOff&&code&&code!=='國') cnt++;
+    });
+    totalCount+=cnt;
+    html+=`<td style="background:#fff9e6;font-weight:600">${cnt||''}</td>`;
+  }
+  html+=`<td style="background:#fff9e6;font-weight:600">${(totalCount/days).toFixed(1)}</td><td></td></tr>`;
+
+  html+='</tbody>';
+  tbl.innerHTML=html;
+
+  renderSummary(y,m,lunchCnt,dinnerCnt);
+}
+
+function calcLaborCost(y,m){
+  let total=0;
+  getEmployeesForMonth(y,m).forEach(e=>{ const r=calcSalary(e.id,y,m); if(r) total+=r.grossPay; });
+  total+=calcFixedCosts(y,m).total;   // 含固定成本
+  return Math.round(total);
+}
+
+function renderSummary(y,m,lunchCnt,dinnerCnt){
+  const el=document.getElementById('sch-summary');
+  if(el) el.innerHTML='';   // 外送次數已移至上方統計列
+}
+
+function editRevenue(){
+  const y=state.curYear,m=state.curMonth;
+  const cur=getRevenue(y,m);
+  const v=prompt(`${y}年${m}月 預估營業額`, cur);
+  if(v===null) return;
+  const n=parseInt(String(v).replace(/[^0-9]/g,''))||0;
+  saveRevenue(y,m,n);
+  renderSchedule();
+}
+
+function editStore(){
+  const v=prompt('店別名稱（例如：旗艦店、二店）', getStore());
+  if(v===null) return;
+  save('mala4w_store', v.trim());
+  renderSchedule();
+}
+
+function calcWorkHours(sh){
+  if(!sh||sh.isOff) return 0;
+  return Math.max(sh.hours-(sh.breakH||0),0);
+}
+
+function renderStatBar(y,m,emps,sch,shifts,holidays){
+  const days=daysInMonth(y,m);
+  let totalH=0,totalOT=0;
+  const settings=getSettings();
+  const reqH=calcRequiredHours(y,m);
+  emps.forEach(emp=>{
+    const empSch=sch[emp.id]||{};
+    let empH=0, empDailyOT=0;
+    for(let d=1;d<=days;d++){
+      const code=empSch[d]||'';
+      const sh=shifts[code];
+      if(sh&&!sh.isOff&&code!=='國'){
+        const h=calcWorkHours(sh);
+        totalH+=h; empH+=h;
+        empDailyOT+=Math.max(h-settings.regularHours,0);
+      }
+    }
+    // 計時：每日超過正常工時為加班；正職：當月總時數超過應出勤為加班
+    totalOT += emp.isFullTime ? Math.max(empH-reqH,0) : empDailyOT;
+  });
+  const rev=getRevenue(y,m);
+  const cost=calcLaborCost(y,m);
+  const pct=rev>0?(cost/rev*100):0;
+  // 外送次數（午/晚/合計）
+  const deliv=getDelivery(y,m);
+  const lunch=Object.keys(deliv.lunch||{}).length, dinner=Object.keys(deliv.dinner||{}).length;
+  // 正職當月可休天數＝紅字天數（六日＋國定假日），即每位正職應休的天數
+  const ftRest=countRedDays(y,m);
+  document.getElementById('stat-bar').innerHTML=`
+    <div class="stat-chip"><div class="sv">${emps.length}</div><div class="sl">員工數</div></div>
+    <div class="stat-chip" style="cursor:pointer" onclick="editRevenue()"><div class="sv">$${(rev/10000).toFixed(0)}萬</div><div class="sl">預估營業額 ✎</div></div>
+    <div class="stat-chip"><div class="sv" style="color:${pct>22?'#e74c3c':'#27ae60'}">${pct.toFixed(1)}%</div><div class="sl">人事成本 $${(cost/10000).toFixed(1)}萬</div></div>
+    <div class="stat-chip"><div class="sv" style="color:#1d9e75">${lunch+dinner}</div><div class="sl">外送 午${lunch}晚${dinner}</div></div>
+    <div class="stat-chip"><div class="sv">${totalH.toFixed(0)}</div><div class="sl">總時數</div></div>
+    <div class="stat-chip"><div class="sv">${totalOT.toFixed(0)}</div><div class="sl">加班時數</div></div>
+    <div class="stat-chip"><div class="sv" style="color:#e67e22">${reqH}</div><div class="sl">正職應出勤</div></div>
+    <div class="stat-chip"><div class="sv" style="color:#e74c3c">${ftRest}</div><div class="sl">正職休假天數</div></div>
+  `;
+}
+
+function renderShiftLegend(shifts){
+  const el=document.getElementById('shift-legend');
+  if(!el) return;
+  el.innerHTML=sortedShiftEntries(shifts).filter(([,sh])=>!sh.isOff).map(([code,sh])=>
+    `<div style="flex:0 0 auto;background:${sh.color};color:${sh.textColor};border-radius:6px;padding:3px 8px;font-size:10px;font-weight:700;white-space:nowrap">
+      ${code} <span style="font-weight:400;font-size:9px">${fmtShiftTime(sh.time)}</span>
+    </div>`
+  ).join('');
+}
+
+function checkScheduleAbnormalities(y,m){
+  const days=daysInMonth(y,m);
+  const sch=getSchedule(y,m);
+  const emps=getEmployeesForMonth(y,m);
+  const dayReq=getDayReq();
+  const holidays=getHolidays(y,m);
+  const result=[];
+  for(let d=1;d<=days;d++){
+    if(holidays.includes(d)) continue; // 國定假日不檢查
+    const wk=weekday(y,m,d);
+    const dt=wk===6?'saturday':wk===0?'sunday':'weekday';
+    const reqs=dayReq[dt]||[];
+    if(!reqs.length) continue;
+    const issues=[];
+    for(const req of reqs){
+      const actual=emps.filter(emp=>req.shifts.includes((sch[emp.id]||{})[d])).length;
+      if(actual<req.count) issues.push(`缺${req.label}（需${req.count}人、現${actual}人）`);
+    }
+    if(issues.length) result.push({day:d,wk,issues});
+  }
+  return result;
+}
+
+function renderAbnormalities(){
+  const el=document.getElementById('abnormality-bar');
+  if(!el) return;
+  const list=checkScheduleAbnormalities(state.curYear,state.curMonth);
+  if(!list.length){ el.style.display='none'; return; }
+  const dn=['日','一','二','三','四','五','六'];
+  el.style.display='block';
+  el.innerHTML=
+    `<div style="font-size:12px;font-weight:700;color:#e67e22;margin-bottom:6px">⚠️ 班別需求異常（${list.length} 天）</div>`+
+    list.map(({day,wk,issues})=>
+      `<div style="padding:3px 0;border-bottom:1px solid #ffe0b2;font-size:12px">
+        <span style="font-weight:700;color:#c0392b">${state.curMonth}/${day}（週${dn[wk]}）</span>
+        <span style="color:#555;margin-left:6px">${issues.join('、')}</span>
+      </div>`
+    ).join('');
+}
+
+// ===== LUNAR CALENDAR (農曆) =====
+const LUNAR_INFO=[0x04bd8,0x04ae0,0x0a570,0x054d5,0x0d260,0x0d950,0x16554,0x056a0,0x09ad0,0x055d2,0x04ae0,0x0a5b6,0x0a4d0,0x0d250,0x1d255,0x0b540,0x0d6a0,0x0ada2,0x095b0,0x14977,0x04970,0x0a4b0,0x0b4b5,0x06a50,0x06d40,0x1ab54,0x02b60,0x09570,0x052f2,0x04970,0x06566,0x0d4a0,0x0ea50,0x06e95,0x05ad0,0x02b60,0x186e3,0x092e0,0x1c8d7,0x0c950,0x0d4a0,0x1d8a6,0x0b550,0x056a0,0x1a5b4,0x025d0,0x092d0,0x0d2b2,0x0a950,0x0b557,0x06ca0,0x0b550,0x15355,0x04da0,0x0a5d0,0x14573,0x052d0,0x0a9a8,0x0e950,0x06aa0,0x0aea6,0x0ab50,0x04b60,0x0aae4,0x0a570,0x05260,0x0f263,0x0d950,0x05b57,0x056a0,0x096d0,0x04dd5,0x04ad0,0x0a4d0,0x0d4d4,0x0d250,0x0d558,0x0b540,0x0b6a0,0x195a6,0x095b0,0x049b0,0x0a974,0x0a4b0,0x0b27a,0x06a50,0x06d40,0x0af46,0x0ab60,0x09570,0x04af5,0x04970,0x064b0,0x074a3,0x0ea50,0x06b58,0x05ac0,0x0ab60,0x096d5,0x092e0,0x0c960,0x0d954,0x0d4a0,0x0da50,0x07552,0x056a0,0x0abb7,0x025d0,0x092d0,0x0cab5,0x0a950,0x0b4a0,0x0baa4,0x0ad50,0x055d9,0x04ba0,0x0a5b0,0x15176,0x052b0,0x0a930,0x07954,0x06aa0,0x0ad50,0x05b52,0x04b60,0x0a6e6,0x0a4e0,0x0d260,0x0ea65,0x0d530,0x05aa0,0x076a3,0x096d0,0x04afb,0x04ad0,0x0a4d0,0x1d0b6,0x0d250,0x0d520,0x0dd45,0x0b5a0,0x056d0,0x055b2,0x049b0,0x0a577,0x0a4b0,0x0aa50,0x1b255,0x06d20,0x0ada0,0x14b63,0x09370,0x049f8,0x04970,0x064b0,0x168a6,0x0ea50,0x06b20,0x1a6c4,0x0aae0,0x0a2e0,0x0d2e3,0x0c960,0x0d557,0x0d4a0,0x0da50,0x05d55,0x056a0,0x0a6d0,0x055d4,0x052d0,0x0a9b8,0x0a950,0x0b4a0,0x0b6a6,0x0ad50,0x055a0,0x0aba4,0x0a5b0,0x052b0,0x0b273,0x06930,0x07337,0x06aa0,0x0ad50,0x14b55,0x04b60,0x0a570,0x054e4,0x0d160,0x0e968,0x0d520,0x0daa0,0x16aa6,0x056d0,0x04ae0,0x0a9d4,0x0a2d0,0x0d150,0x0f252,0x0d520];
+function lLeapMonth(y){ return LUNAR_INFO[y-1900]&0xf; }
+function lLeapDays(y){ return lLeapMonth(y)?((LUNAR_INFO[y-1900]&0x10000)?30:29):0; }
+function lMonthDays(y,m){ return (LUNAR_INFO[y-1900]&(0x10000>>m))?30:29; }
+function lYearDays(y){ let s=348; for(let i=0x8000;i>0x8;i>>=1){s+=(LUNAR_INFO[y-1900]&i)?1:0;} return s+lLeapDays(y); }
+function solarToLunar(y,m,d){
+  let offset=Math.round((Date.UTC(y,m-1,d)-Date.UTC(1900,0,31))/86400000);
+  let temp=0, ly;
+  for(ly=1900; ly<2100&&offset>0; ly++){ temp=lYearDays(ly); offset-=temp; }
+  if(offset<0){ offset+=temp; ly--; }
+  const leap=lLeapMonth(ly); let isLeap=false, lm;
+  for(lm=1; lm<13&&offset>0; lm++){
+    if(leap>0&&lm===leap+1&&!isLeap){ lm--; isLeap=true; temp=lLeapDays(ly); }
+    else { temp=lMonthDays(ly,lm); }
+    if(isLeap&&lm===leap+1) isLeap=false;
+    offset-=temp;
+  }
+  if(offset===0&&leap>0&&lm===leap+1){ if(isLeap){isLeap=false;}else{isLeap=true;lm--;} }
+  if(offset<0){ offset+=temp; lm--; }
+  return {lm, ld: offset+1};
+}
+
+// ===== DAY ANNOTATIONS (節日/做牙/盤點) =====
+// 2026（民國115年）國定假日含補假 — 來源：行政院人事行政總處 115年辦公日曆表
+// 四週變形版只列法定假日本身。政府的補假／彈性放假是公務員行事曆，門市不照辦：
+// 國定假日碰到員工自己的例假或休息日時，才另給該員工補假（施行細則 §23-1），自動排班會處理。
+const TW_HOLIDAY_NAMES={
+  2026:{
+    1:{1:'元旦'},
+    2:{16:'除夕',17:'春節',18:'春節',19:'春節',28:'和平紀念日'},
+    4:{4:'兒童節',5:'清明節'},
+    5:{1:'勞動節'},
+    6:{19:'端午節'},
+    9:{25:'中秋節',28:'教師節'},
+    10:{10:'國慶日',25:'臺灣光復節'},
+    12:{25:'行憲紀念日'},
+  }
+};
+function holidayName(y,m,d){ return ((TW_HOLIDAY_NAMES[y]||{})[m]||{})[d]||''; }
+function dayAnnotation(y,m,d,holidays,notes){
+  if(notes[d]) return notes[d];                 // 自訂備註優先
+  const hn=holidayName(y,m,d);                   // 國定假日名稱
+  if(hn) return hn;
+  if(holidays.includes(d)) return '休';          // 其他放假日（無名稱）
+  if(d===daysInMonth(y,m)) return '月底盤點';     // 每月最後一天
+  const L=solarToLunar(y,m,d);                   // 農曆做牙
+  if(L.ld===2) return '初二';
+  if(L.ld===16) return '十六';
+  return '';
+}
+function editNote(d){
+  const y=state.curYear,m=state.curMonth;
+  const notes=getNotes(y,m);
+  const auto=holidayName(y,m,d)||((d===daysInMonth(y,m))?'月底盤點':'');
+  const cur=notes[d]||'';
+  const v=prompt(`${m}/${d} 備註（如：換油、盤點。留空清除）`, cur||auto);
+  if(v===null) return;
+  if(v.trim()==='') delete notes[d]; else notes[d]=v.trim();
+  saveNotes(y,m,notes);
+  renderSchedule();
+}
+function editDelivery(meal,d){
+  const y=state.curYear,m=state.curMonth;
+  const deliv=getDelivery(y,m);
+  if(!deliv.lunch) deliv.lunch={};
+  if(!deliv.dinner) deliv.dinner={};
+  const label=meal==='lunch'?'午餐':'晚餐';
+  const cur=deliv[meal][d]||'';
+  const v=prompt(`${m}/${d} ${label}外送對象（如：台A、昌益。留空清除）`, cur);
+  if(v===null) return;
+  if(v.trim()==='') delete deliv[meal][d]; else deliv[meal][d]=v.trim();
+  saveDelivery(y,m,deliv);
+  renderSchedule();
+}
+
+// ===== 外送文字匯入 =====
+// 解析像「7/9、7/10台元D棟午餐」「7/13~7/15竹科U棟午餐」這種日期＋棟別＋餐別連續貼上的文字
+function expandDeliveryDates(dateStr,y){
+  const days=[];
+  if(dateStr.includes('~')){
+    const [a,b]=dateStr.split('~');
+    const [am,ad]=a.split('/').map(Number);
+    const [bm,bd]=b.split('/').map(Number);
+    const cur=new Date(y,am-1,ad);
+    const end=new Date(y,bm-1,bd);
+    while(cur<=end){
+      days.push({month:cur.getMonth()+1,day:cur.getDate()});
+      cur.setDate(cur.getDate()+1);
+    }
+  } else {
+    dateStr.split(/[、,]/).forEach(d=>{
+      const [mm,dd]=d.split('/').map(Number);
+      if(mm&&dd) days.push({month:mm,day:dd});
+    });
+  }
+  return days;
+}
+function parseDeliveryText(text,y){
+  const re=/(\d{1,2}\/\d{1,2}(?:[、,~]\d{1,2}\/\d{1,2})*)([^\d]+?)(午餐|晚餐)/g;
+  const entries=[];
+  let m;
+  while((m=re.exec(text))){
+    const label=m[2].trim();
+    if(!label) continue;
+    const meal=m[3]==='午餐'?'lunch':'dinner';
+    expandDeliveryDates(m[1],y).forEach(({month,day})=>entries.push({month,day,meal,label}));
+  }
+  return entries;
+}
+function openDelivImport(){
+  document.getElementById('deliv-import-text').value='';
+  document.getElementById('deliv-import-year').textContent=state.curYear;
+  openModal('deliv-import-overlay');
+}
+function runDelivImport(){
+  const text=document.getElementById('deliv-import-text').value;
+  const y=state.curYear;
+  const entries=parseDeliveryText(text,y);
+  if(!entries.length){ showToast('沒有解析到任何資料，請確認格式'); return; }
+  const cache={};
+  entries.forEach(({month,day,meal,label})=>{
+    if(!cache[month]) cache[month]=getDelivery(y,month);
+    if(!cache[month][meal]) cache[month][meal]={};
+    cache[month][meal][day]=label;
+  });
+  Object.entries(cache).forEach(([month,d])=>saveDelivery(y,parseInt(month),d));
+  closeModal('deliv-import-overlay');
+  renderSchedule();
+  showToast(`✅ 已匯入 ${entries.length} 筆外送紀錄`);
+}
+
+// ===== LEAVE & HOURS CALCULATIONS =====
+function calcLeaveEntitlement(hireDateStr){
+  if(!hireDateStr) return 0;
+  const hire=new Date(hireDateStr), now=new Date();
+  const days=(now-hire)/(24*60*60*1000);
+  const months=days/30.44, years=days/365.25;
+  if(months<6) return 0;
+  if(months<12) return 3;
+  if(years<2) return 7;
+  if(years<3) return 10;
+  if(years<5) return 14;
+  if(years<10) return 15;
+  return Math.min(15+Math.floor(years-10)+1, 30);
+}
+
+function calcLeaveUsed(empId, y){
+  let used=0;
+  for(let m=1;m<=12;m++){
+    const sch=getSchedule(y,m);
+    const empSch=sch[empId]||{};
+    used+=Object.values(empSch).filter(c=>c==='特').length;
+  }
+  return used;
+}
+
+function calcRequiredHours(y,m){
+  const days=daysInMonth(y,m);
+  const holidays=getHolidays(y,m);
+  let workDays=0;
+  for(let d=1;d<=days;d++){
+    const wk=weekday(y,m,d);
+    if(wk!==0&&wk!==6&&!holidays.includes(d)) workDays++;
+  }
+  return workDays*8;
+}
+
+// ===== SHIFT PICKER =====
+function openShiftPicker(empId, day){
+  if(blockIfLocked(state.curYear,state.curMonth)) return;   // 已鎖定：連選班視窗都不開
+  state.pendingCell={empId,day};
+  state.pendingShift=null;
+  const y=state.curYear,m=state.curMonth;
+  const sch=getSchedule(y,m);
+  const cur=(sch[empId]||{})[day]||'';
+  const emp=getEmployees().find(e=>e.id===empId);
+  const wk=weekday(y,m,day);
+  document.getElementById('shift-modal-title').textContent=`${emp?.name} | ${m}/${day}（${wd(wk)}）`;
+
+  const shifts=getShifts();
+  let html='';
+  sortedShiftEntries(shifts).forEach(([code,sh])=>{
+    const sel=code===cur?'selected':'';
+    html+=`<div class="sp-btn ${sel}" style="background:${sh.color};color:${sh.textColor}" onclick="selectShiftOpt('${code}',this)">${code}</div>`;
+  });
+  // clear option
+  html+=`<div class="sp-btn ${cur===''?'selected':''}" style="background:#f0f0f0;color:#888" onclick="selectShiftOpt('',this)">清除</div>`;
+  document.getElementById('shift-picker-grid').innerHTML=html;
+  updateShiftInfo(cur);
+  openModal('shift-overlay');
+}
+
+function selectShiftOpt(code, el){
+  state.pendingShift=code;
+  document.querySelectorAll('#shift-picker-grid .sp-btn').forEach(b=>b.classList.remove('selected'));
+  el.classList.add('selected');
+  updateShiftInfo(code);
+}
+
+function updateShiftInfo(code){
+  const shifts=getShifts();
+  const sh=shifts[code];
+  const box=document.getElementById('shift-info-box');
+  if(!sh||!code){box.textContent='點選班別後確定';return;}
+  const h=calcWorkHours(sh);
+  box.textContent=`${sh.name}｜${fmtShiftTime(sh.time)}｜工時 ${h}h`;
+}
+
+function applyShift(){
+  if(state.pendingShift===null){showToast('請選擇班別');return;}
+  const {empId,day}=state.pendingCell;
+  const y=state.curYear,m=state.curMonth;
+  const sch=getSchedule(y,m);
+  if(!sch[empId]) sch[empId]={};
+  if(state.pendingShift===''){
+    delete sch[empId][day];
+  } else {
+    sch[empId][day]=state.pendingShift;
+  }
+  saveSchedule(y,m,sch);
+  closeModal('shift-overlay');
+  renderSchedule();
+}
+
+// ===== EMPLOYEE PAGE =====
+function renderEmployees(){
+  const all=getEmployees();
+  const active=all.filter(e=>e.active!==false);
+  const left=all.filter(e=>e.active===false);
+  const el=document.getElementById('emp-list');
+  if(!all.length){
+    el.innerHTML='<div style="text-align:center;padding:24px;color:var(--gray)">尚無員工，點右下角 ＋ 新增</div>';
+    return;
+  }
+  const card=e=>{
+    const monthly=(e.base||0)+(e.skillAllow||0)+(e.attendBonus||0)+(e.nightAllow||0)+(e.mgrAllow||0);
+    const payStr=e.isFullTime?`月薪 $${monthly.toLocaleString()}`:`時薪 $${e.wage||0}`;
+    return `
+    <div class="emp-item">
+      <div class="emp-avatar">${e.name[0]}</div>
+      <div class="emp-info">
+        <div class="name">${e.name}${e.isFullTime?' <span style="font-size:10px;color:#e67e22">正職</span>':' <span style="font-size:10px;color:#3498db">計時</span>'}</div>
+        <div class="sub">${e.phone||'－'} ｜ ${payStr}</div>
+        <div class="sub">到職：${e.hireDate||'－'}</div>
+      </div>
+      <div class="emp-actions">
+        <button class="btn btn-outline btn-sm" onclick="openEmpModal('${e.id}')">編輯</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteEmployee('${e.id}')">刪除</button>
+      </div>
+    </div>`;
+  };
+  const leftCard=e=>`
+    <div class="emp-item" style="opacity:.6">
+      <div class="emp-avatar" style="background:#bbb">${e.name[0]}</div>
+      <div class="emp-info">
+        <div class="name">${e.name} <span style="font-size:10px;color:#e74c3c">離職 ${e.termMonth||''}</span></div>
+        <div class="sub">已排班月份仍保留，之後月份隱藏</div>
+      </div>
+      <div class="emp-actions">
+        <button class="btn btn-outline btn-sm" onclick="restoreEmployee('${e.id}')">復職</button>
+        <button class="btn btn-danger btn-sm" onclick="purgeEmployee('${e.id}')">永久刪</button>
+      </div>
+    </div>`;
+  el.innerHTML = active.map(card).join('')
+    + (left.length?`<div class="section-title" style="padding:14px 0 4px">已離職（${left.length}）</div>`+left.map(leftCard).join(''):'');
+}
+
+function openEmpModal(id=''){
+  document.getElementById('emp-modal-title').textContent=id?'編輯員工':'新增員工';
+  const emps=getEmployees();
+  const e=emps.find(x=>x.id===id)||{};
+  document.getElementById('emp-id').value=e.id||'';
+  document.getElementById('emp-name').value=e.name||'';
+  document.getElementById('emp-hire').value=e.hireDate||'';
+  document.getElementById('emp-phone').value=e.phone||'';
+  document.getElementById('emp-birthday').value=e.birthday||'';
+  document.getElementById('emp-wage').value=e.wage||'';
+  document.getElementById('emp-base').value=e.base||'';
+  document.getElementById('emp-ins').value=e.insurance||'';
+  document.getElementById('emp-dorm').value=e.dormitory||'';
+  document.getElementById('emp-leave').value=e.leaveQuota||'';
+  document.getElementById('emp-otrate').value=e.otRate||'';
+  document.getElementById('emp-skill').value=e.skillAllow||'';
+  document.getElementById('emp-attend').value=e.attendBonus||'';
+  document.getElementById('emp-night').value=e.nightAllow||'';
+  document.getElementById('emp-mgr').value=e.mgrAllow||'';
+  document.getElementById('emp-fulltime').checked=e.isFullTime||false;
+  openModal('emp-overlay');
+}
+
+function saveEmployee(){
+  const name=document.getElementById('emp-name').value.trim();
+  const wage=parseFloat(document.getElementById('emp-wage').value)||0;
+  if(!name){showToast('請輸入姓名');return;}
+  const emps=getEmployees();
+  const id=document.getElementById('emp-id').value||uid();
+  const idx=emps.findIndex(e=>e.id===id);
+  const emp={
+    ...(idx>=0?emps[idx]:{}),   // 保留既有欄位（如 active / termMonth）
+    id,name,
+    hireDate:document.getElementById('emp-hire').value,
+    phone:document.getElementById('emp-phone').value.trim(),
+    birthday:document.getElementById('emp-birthday').value||'',
+    wage,
+    base:parseFloat(document.getElementById('emp-base').value)||0,
+    insurance:parseFloat(document.getElementById('emp-ins').value)||0,
+    dormitory:parseFloat(document.getElementById('emp-dorm').value)||0,
+    leaveQuota:parseFloat(document.getElementById('emp-leave').value)||0,
+    otRate:parseFloat(document.getElementById('emp-otrate').value)||0,
+    skillAllow:parseFloat(document.getElementById('emp-skill').value)||0,
+    attendBonus:parseFloat(document.getElementById('emp-attend').value)||0,
+    nightAllow:parseFloat(document.getElementById('emp-night').value)||0,
+    mgrAllow:parseFloat(document.getElementById('emp-mgr').value)||0,
+    isFullTime:document.getElementById('emp-fulltime').checked,
+  };
+  if(idx>=0) emps[idx]=emp; else emps.push(emp);
+  saveEmployees(emps);
+  closeModal('emp-overlay');
+  renderEmployees();
+  showToast(idx>=0?'已更新員工資料':'已新增員工');
+}
+
+function deleteEmployee(id){
+  const emps=getEmployees();
+  const emp=emps.find(e=>e.id===id);
+  if(!emp) return;
+  const term=monthKey(new Date().getFullYear(), new Date().getMonth()+1);
+  if(!confirm(`確定要將「${emp.name}」設為離職？\n\n已排定的班表（含本月）會保留，${term} 之後的月份不再顯示。`)) return;
+  const idx=emps.findIndex(e=>e.id===id);
+  emps[idx]={...emps[idx], active:false, termMonth:term};
+  saveEmployees(emps);
+  renderEmployees();
+  renderSchedule(); renderSalary();
+  showToast('已設為離職（保留歷史班表）');
+}
+
+function restoreEmployee(id){
+  const emps=getEmployees();
+  const idx=emps.findIndex(e=>e.id===id);
+  if(idx<0) return;
+  emps[idx]={...emps[idx], active:true}; delete emps[idx].termMonth;
+  saveEmployees(emps);
+  renderEmployees(); renderSchedule(); renderSalary();
+  showToast('已復職');
+}
+
+function purgeEmployee(id){
+  const emp=getEmployees().find(e=>e.id===id);
+  if(!emp) return;
+  if(!confirm(`永久刪除「${emp.name}」？\n\n會一併移除所有月份的班表記錄，無法復原！`)) return;
+  saveEmployees(getEmployees().filter(e=>e.id!==id));
+  // 清掉所有月份的排班資料
+  for(let i=localStorage.length-1;i>=0;i--){
+    const k=localStorage.key(i);
+    if(k&&/^mala4w_sch_\d+_\d+$/.test(k)){
+      try{const s=JSON.parse(localStorage.getItem(k)); if(s[id]){delete s[id]; save(k,s);}}catch{}
+    }
+  }
+  renderEmployees(); renderSchedule(); renderSalary();
+  showToast('已永久刪除');
+}
+
+// ===== SALARY PAGE =====
+function changeSalMonth(d){
+  state.salMonth+=d;
+  if(state.salMonth>12){state.salMonth=1;state.salYear++;}
+  if(state.salMonth<1){state.salMonth=12;state.salYear--;}
+  renderSalary();
+}
+
+function calcSalary(empId, y, m){
+  const emps=getEmployees();
+  const emp=emps.find(e=>e.id===empId);
+  if(!emp) return null;
+  const sch=getSchedule(y,m);
+  const shifts=getShifts();
+  const settings=getSettings();
+  const holidays=getHolidays(y,m);
+  const empSch=sch[empId]||{};
+  const days=daysInMonth(y,m);
+
+  let workDays=0, restDays=0, totalH=0, regularPay=0, otPay=0, holPay=0;
+  let ftRegHours=0, ftHolHours=0;   // 正職用：平日/假日工時累計
+  const wage=emp.wage||0;
+
+  for(let d=1;d<=days;d++){
+    const code=empSch[d]||'';
+    const sh=shifts[code];
+    if(!sh) continue;
+    if(sh.isOff){ restDays++; continue; }
+
+    const isHol=holidays.includes(d);
+    const h=calcWorkHours(sh);
+    workDays++;
+    totalH+=h;
+
+    if(emp.isFullTime){
+      // 月薪制：先累計工時，迴圈後一次計算
+      if(isHol) ftHolHours+=h; else ftRegHours+=h;
+    } else {
+      // 計時制：逐日計算
+      const regH=Math.min(h,settings.regularHours);
+      const otH=Math.max(h-settings.regularHours,0);
+      if(isHol){
+        holPay+=h*wage*settings.holRate;
+      } else {
+        regularPay+=regH*wage;
+        if(emp.otRate>0){
+          otPay+=otH*emp.otRate;                         // 自訂加班費（元/時）
+        } else {
+          otPay+=Math.min(otH,2)*wage*settings.ot1 + Math.max(otH-2,0)*wage*settings.ot2;
+        }
+      }
+    }
+  }
+
+  // 津貼／獎金（有上班的月份才計入）
+  const allowances = workDays>0
+    ? (emp.skillAllow||0)+(emp.attendBonus||0)+(emp.nightAllow||0)+(emp.mgrAllow||0)
+    : 0;
+
+  if(emp.isFullTime){
+    // 月薪制：底薪固定；加班＝當月平日工時超過應出勤；假日另計
+    const reqH=calcRequiredHours(y,m);
+    const hourlyEquiv = emp.base>0 ? emp.base/reqH : wage;          // 月薪換算時薪
+    const otH=Math.max(ftRegHours-reqH,0);
+    const otHourly = emp.otRate>0 ? emp.otRate : hourlyEquiv*settings.ot1;
+    regularPay = workDays>0 ? (emp.base||0) : 0;                    // 月薪底薪
+    otPay = otH*otHourly;
+    holPay = ftHolHours*hourlyEquiv*settings.holRate;
+  } else {
+    regularPay += (workDays>0?(emp.base||0):0);                     // 計時：時薪薪資＋底薪
+  }
+  const grossPay=Math.round(regularPay+otPay+holPay+allowances);
+  const deductions=(emp.insurance||0)+(emp.dormitory||0);
+  const netPay=grossPay-deductions;
+
+  return {emp,workDays,restDays,totalH,regularPay,otPay,holPay,allowances,grossPay,deductions,netPay};
+}
+
+// ===== 固定成本 =====
+function getFixedCost(){
+  return {laborInsFT:0,laborInsPT:0,healthIns:0,groupIns:0,owner:0,groupRisk:0,accounting:7000,...load('mala4w_fixedcost',{})};
+}
+function editFixedCost(key,label){
+  const f=getFixedCost();
+  const v=prompt(`${label}（元/月）`, f[key]||0);
+  if(v===null) return;
+  f[key]=parseInt(String(v).replace(/[^0-9]/g,''))||0;
+  save('mala4w_fixedcost',f);
+  renderSalary();
+}
+// 當月固定成本明細（含自動計算項目）
+function calcFixedCosts(y,m){
+  const f=getFixedCost();
+  const ftEmps=getEmployeesForMonth(y,m).filter(e=>e.isFullTime);
+  const ftCount=ftEmps.length;
+  // 三節禮金：當月有春節/端午/中秋 → 600 × 正職人數
+  const names=Object.values(((typeof TW_HOLIDAY_NAMES!=='undefined'&&TW_HOLIDAY_NAMES[y])||{})[m]||{}).join('');
+  const hasFestival=/春節|端午|中秋/.test(names);
+  const festivalGift=hasFestival?600*ftCount:0;
+  // 年終獎金攤提：正職(底薪+津貼)總和/12（每月都有）
+  const ftMonthly=ftEmps.reduce((s,e)=>s+(e.base||0)+(e.skillAllow||0)+(e.attendBonus||0)+(e.nightAllow||0)+(e.mgrAllow||0),0);
+  const yearEndAmort=Math.round(ftMonthly/12);
+  const items=[
+    {key:'laborInsFT', label:'勞保（正職）', val:f.laborInsFT, edit:true},
+    {key:'laborInsPT', label:'勞保（計時）', val:f.laborInsPT, edit:true},
+    {key:'healthIns',  label:'健保',        val:f.healthIns,  edit:true},
+    {key:'groupIns',   label:'團保',        val:f.groupIns,   edit:true},
+    {key:'owner',      label:'負責人',      val:f.owner,      edit:true},
+    {key:'groupRisk',  label:'團險',        val:f.groupRisk,  edit:true},
+    {key:'festival',   label:'三節禮金'+(hasFestival?`（600×${ftCount}）`:'（本月無）'), val:festivalGift, edit:false},
+    {key:'yearEnd',    label:'年終獎金攤提（自動）', val:yearEndAmort, edit:false},
+    {key:'accounting', label:'會計薪資',    val:f.accounting, edit:true},
+  ];
+  const total=items.reduce((s,i)=>s+i.val,0);
+  return {items,total};
+}
+
+function renderSalary(){
+  const y=state.salYear, m=state.salMonth;
+  document.getElementById('sal-month-label').textContent=`${y} 年 ${m} 月`;
+  const emps=getEmployeesForMonth(y,m);
+  if(!emps.length){
+    document.getElementById('salary-content').innerHTML='<div class="card" style="text-align:center;color:var(--gray);padding:24px">尚無員工資料</div>';
+    return;
+  }
+
+  let totalGross=0, totalNet=0;
+  let rows='';
+  emps.forEach(emp=>{
+    const r=calcSalary(emp.id,y,m);
+    if(!r) return;
+    totalGross+=r.grossPay;
+    totalNet+=r.netPay;
+    rows+=`
+      <div class="sal-item">
+        <div class="sal-name">${r.emp.name}</div>
+        <div class="sal-tags">
+          <span class="sal-tag">出勤 ${r.workDays} 天</span>
+          <span class="sal-tag">時數 ${r.totalH.toFixed(1)}h</span>
+          <span class="sal-tag">${r.emp.isFullTime?'月薪':'底薪'} $${r.regularPay.toFixed(0)}</span>
+          ${r.otPay>0?`<span class="sal-tag" style="color:#e67e22">加班 $${r.otPay.toFixed(0)}</span>`:''}
+          ${r.holPay>0?`<span class="sal-tag" style="color:#e74c3c">假日 $${r.holPay.toFixed(0)}</span>`:''}
+          ${r.allowances>0?`<span class="sal-tag" style="color:#8e44ad">津貼 $${r.allowances.toFixed(0)}</span>`:''}
+        </div>
+        <div class="sal-total">實領 $${r.netPay.toLocaleString()}</div>
+        ${r.deductions>0?`<div class="sal-deduct">扣除：保險 $${r.emp.insurance||0} ＋ 宿舍 $${r.emp.dormitory||0} = $${r.deductions}</div>`:''}
+      </div>`;
+  });
+
+  // 固定成本
+  const fc=calcFixedCosts(y,m);
+  const fcRows=fc.items.map(it=>`
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border)">
+      <span style="font-size:13px;color:var(--text)">${it.label}</span>
+      <span style="font-size:14px;font-weight:600;${it.edit?'cursor:pointer':''}" ${it.edit?`onclick="editFixedCost('${it.key}','${it.label}')"`:''}>$${it.val.toLocaleString()}${it.edit?' ✎':''}</span>
+    </div>`).join('');
+  const grandTotal=totalGross+fc.total;
+
+  document.getElementById('salary-content').innerHTML=`
+    <div class="card" style="background:var(--red);color:#fff;border-radius:12px;margin:12px">
+      <div style="font-size:13px;opacity:.85;margin-bottom:4px">${y}年${m}月 人事成本總計</div>
+      <div style="font-size:26px;font-weight:700">$${grandTotal.toLocaleString()}</div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:12px;opacity:.9">
+        <span>員工薪資 $${totalGross.toLocaleString()}</span>
+        <span>固定成本 $${fc.total.toLocaleString()}</span>
+        <span>員工實領 $${totalNet.toLocaleString()}</span>
+      </div>
+    </div>
+    <div class="section-title">員工薪資</div>
+    <div class="card">${rows}</div>
+    <div class="section-title">固定成本（每月）</div>
+    <div class="card">
+      ${fcRows}
+      <div style="display:flex;justify-content:space-between;padding-top:10px;font-weight:700">
+        <span>固定成本小計</span><span style="color:var(--red)">$${fc.total.toLocaleString()}</span>
+      </div>
+    </div>`;
+}
+
+// ===== SETTINGS PAGE =====
+// 列出「已經排了班的月份」，各給一顆鎖定切換鈕
+function renderLockList(){
+  const el=document.getElementById('lock-list');
+  if(!el) return;
+  const months=[];
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i), mt=k&&k.match(/^mala4w_sch_(\d+)_(\d+)$/);
+    if(!mt) continue;
+    const sch=load(k,{});
+    // 空月份不列（清空過的月份沒必要出現在清單裡）
+    const hasData=Object.values(sch).some(o=>o&&Object.keys(o).length);
+    if(hasData||isMonthLocked(+mt[1],+mt[2])) months.push([+mt[1],+mt[2]]);
+  }
+  months.sort((a,b)=>b[0]-a[0]||b[1]-a[1]);
+  if(!months.length){ el.innerHTML='<div style="font-size:13px;color:var(--gray)">目前沒有已排班的月份</div>'; return; }
+  el.innerHTML=months.map(([y,m])=>{
+    const locked=isMonthLocked(y,m);
+    return `<div style="display:flex;align-items:center;padding:8px 10px;margin:0 -10px;border-bottom:1px solid var(--border);${locked?'background:#fff5f5':''}">
+      <span style="flex:1;font-weight:600">${y}年${m}月${locked?' 🔒':''}</span>
+      <button class="btn btn-sm ${locked?'btn-primary':'btn-ghost'}" onclick="toggleMonthLock(${y},${m})">
+        ${locked?'🔓 解除鎖定':'🔒 鎖定'}</button>
+    </div>`;
+  }).join('');
+}
+
+function renderSettings(){
+  renderLockList();
+  const shifts=getShifts();
+  const settings=getSettings();
+  document.getElementById('set-regular-hours').value=settings.regularHours;
+  document.getElementById('set-ot1').value=settings.ot1;
+  document.getElementById('set-ot2').value=settings.ot2;
+  document.getElementById('set-hol').value=settings.holRate;
+
+  // Shift defs
+  let html='';
+  sortedShiftEntries(shifts).forEach(([code,sh])=>{
+    html+=`<div class="shift-def-row">
+      <span class="shift-badge" style="background:${sh.color};color:${sh.textColor}">${code}</span>
+      <span style="flex:1;margin:0 10px">
+        <span style="font-weight:600">${sh.name}</span><br>
+        <span style="font-size:12px;color:var(--gray)">${fmtShiftTime(sh.time)} ｜ ${calcWorkHours(sh)}h</span>
+      </span>
+      <button class="btn btn-outline btn-sm" onclick="openShiftDef('${code}')">編輯</button>
+      <button class="btn btn-danger btn-sm" style="margin-left:6px" onclick="deleteShift('${code}')">刪除</button>
+    </div>`;
+  });
+  html+=`<button class="btn btn-primary btn-sm" style="margin-top:12px;width:100%" onclick="openShiftDef('')">＋ 新增班別</button>`;
+  document.getElementById('shift-defs').innerHTML=html;
+
+  renderAutoRulesSettings();
+  renderDayReqSettings();
+  updateGistStatus();
+}
+
+function renderDayReqSettings(){
+  const el=document.getElementById('day-req-card');
+  if(!el) return;
+  const req=getDayReq();
+  const shifts=getShifts();
+  const workShifts=sortedShiftEntries(shifts).filter(([,sh])=>!sh.isOff);
+  const typeLabel={weekday:'平日（一～五）',saturday:'週六',sunday:'週日'};
+  let html='';
+  ['weekday','saturday','sunday'].forEach(dt=>{
+    const rules=req[dt]||[];
+    const rows=rules.map((r,idx)=>{
+      const shiftBtns=workShifts.map(([code,sh])=>{
+        const active=r.shifts.includes(code);
+        return `<button onclick="toggleDayReqShift('${dt}',${idx},'${code}',this)"
+          style="padding:3px 9px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;
+                 border:2px solid ${active?'var(--red)':'var(--border)'};
+                 background:${sh.color};color:${sh.textColor}">${code}</button>`;
+      }).join('');
+      return `<div style="padding:8px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="flex:1;display:flex;flex-wrap:wrap;gap:5px">${shiftBtns}</div>
+          <input type="number" min="0" value="${r.count}" style="width:48px;padding:4px;border:1px solid var(--border);border-radius:6px;font-size:13px;text-align:center"
+            onchange="updateDayReqCount('${dt}',${idx},this.value)">
+          <button class="btn btn-danger btn-sm" onclick="deleteDayReqRule('${dt}',${idx})">刪</button>
+        </div>
+      </div>`;
+    }).join('');
+    html+=`<div style="padding:10px 0;border-bottom:2px solid var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <div style="font-size:12px;font-weight:700;color:var(--gray)">${typeLabel[dt]}</div>
+        <button class="btn btn-outline btn-sm" onclick="addDayReqRule('${dt}')">＋ 新增規則</button>
+      </div>
+      ${rows||'<div style="font-size:12px;color:var(--gray);padding:6px 0">尚無規則</div>'}
+    </div>`;
+  });
+  html+=`<div style="font-size:11px;color:var(--gray);margin-top:10px">點班別代碼切換需求班別，右側數字為需求人數（0 表示停用此規則）。</div>`;
+  el.innerHTML=html;
+}
+
+function saveDayReq(req){ save('mala4w_day_req',req); }
+
+function toggleDayReqShift(dt,idx,code,btn){
+  const req=getDayReq();
+  const r=req[dt][idx];
+  if(r.shifts.includes(code)) r.shifts=r.shifts.filter(c=>c!==code);
+  else r.shifts.push(code);
+  r.label=r.shifts.join('/')||'未設定';
+  saveDayReq(req);
+  renderDayReqSettings();
+}
+
+function updateDayReqCount(dt,idx,value){
+  const req=getDayReq();
+  req[dt][idx].count=Math.max(0,parseInt(value)||0);
+  saveDayReq(req);
+}
+
+function addDayReqRule(dt){
+  const req=getDayReq();
+  if(!req[dt]) req[dt]=[];
+  req[dt].push({label:'未設定',shifts:[],count:1});
+  saveDayReq(req);
+  renderDayReqSettings();
+}
+
+function deleteDayReqRule(dt,idx){
+  const req=getDayReq();
+  req[dt].splice(idx,1);
+  saveDayReq(req);
+  renderDayReqSettings();
+}
+
+function deleteShift(code){
+  // 計算使用中的格數，提醒使用者
+  let used=0;
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k && /^mala4w_sch_\d+_\d+$/.test(k)){
+      const s=load(k,{});
+      for(const eid in s) for(const d in s[eid]) if(s[eid][d]===code) used++;
+    }
+  }
+  const warn = used>0 ? `\n\n⚠️ 目前有 ${used} 格排班使用此班別，刪除後那些格子會變空白。` : '';
+  if(!confirm(`刪除班別「${code}」？${warn}`)) return;
+  // 從自訂班別移除，並加入隱藏清單（連 DEFAULT 內建班別也能隱藏）
+  const custom=load('mala4w_shifts',{});
+  if(custom[code]){ delete custom[code]; save('mala4w_shifts',custom); }
+  const hidden=load('mala4w_hidden_shifts',[]);
+  if(!hidden.includes(code)){ hidden.push(code); save('mala4w_hidden_shifts',hidden); }
+  renderSettings(); renderSchedule();
+  showToast(`已刪除班別 ${code}`);
+}
+
+function openShiftDef(code){
+  const shifts=getShifts();
+  const sh=shifts[code]||{color:'#FFE066',textColor:'#333',hours:8,time:'',isOff:false,name:''};
+  document.getElementById('shiftdef-title').textContent=code?`編輯班別 ${code}`:'新增班別';
+  document.getElementById('sd-code').value=code;
+  document.getElementById('sd-name').value=code;
+  document.getElementById('sd-hours').value=sh.hours;
+  document.getElementById('sd-time').value=sh.time;
+  document.getElementById('sd-color').value=sh.color;
+  document.getElementById('sd-textcolor').value=sh.textColor;
+  document.getElementById('sd-isoff').checked=sh.isOff;
+  openModal('shiftdef-overlay');
+}
+
+function saveShiftDef(){
+  const code=document.getElementById('sd-code').value;
+  const newCode=document.getElementById('sd-name').value.trim();
+  if(!newCode){showToast('請輸入班別代碼');return;}
+  const shifts=load('mala4w_shifts',{});
+  if(code&&code!==newCode) delete shifts[code];
+  shifts[newCode]={
+    name:newCode+'班',
+    time:document.getElementById('sd-time').value,
+    hours:parseFloat(document.getElementById('sd-hours').value)||0,
+    breakH:0,
+    color:document.getElementById('sd-color').value,
+    textColor:document.getElementById('sd-textcolor').value,
+    isOff:document.getElementById('sd-isoff').checked,
+  };
+  saveShifts(shifts);
+  // 若該代碼曾被刪除（隱藏），重新建立時取消隱藏
+  const hidden=load('mala4w_hidden_shifts',[]).filter(c=>c!==newCode);
+  save('mala4w_hidden_shifts',hidden);
+  closeModal('shiftdef-overlay');
+  renderSettings(); renderSchedule();
+  showToast('班別已儲存');
+}
+
+// ===== PDF EXPORT =====
+// iOS Safari 不支援 a[download] 自動下載，且 await 後已失去使用者手勢 → 用可點擊連結開啟
+function isIOS(){
+  return /iP(hone|ad|od)/.test(navigator.userAgent) ||
+         (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1); // iPadOS 偽裝成 Mac
+}
+// 把產生好的 PDF 交給使用者：桌機/Android 直接下載；iOS 顯示可點擊按鈕開啟（再用分享儲存或列印）
+function deliverPdf(pdf, filename){
+  if(isIOS()){
+    const url=pdf.output('bloburl');
+    let ov=document.getElementById('pdf-link-overlay');
+    if(ov) ov.remove();
+    ov=document.createElement('div');
+    ov.id='pdf-link-overlay';
+    ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px';
+    ov.innerHTML=`<div style="background:#fff;border-radius:16px;padding:24px;max-width:340px;width:100%;text-align:center">
+      <div style="font-size:17px;font-weight:800;margin-bottom:6px">PDF 已產生 📄</div>
+      <div style="font-size:13px;color:#666;line-height:1.6;margin-bottom:18px">點下方按鈕開啟，再按瀏覽器的<b>「分享」</b>即可儲存到「檔案」或列印</div>
+      <a href="${url}" target="_blank" rel="noopener" style="display:block;background:var(--red);color:#fff;padding:13px;border-radius:10px;font-weight:700;text-decoration:none;margin-bottom:10px">開啟 PDF</a>
+      <button type="button" style="background:none;border:none;color:#888;font-size:14px;padding:6px" onclick="this.closest('#pdf-link-overlay').remove()">關閉</button>
+    </div>`;
+    document.body.appendChild(ov);
+  } else {
+    pdf.save(filename);
+  }
+}
+// 以截圖方式輸出（瀏覽器繪製中文，避免 jsPDF 內建字型亂碼），A4 橫式滿版
+async function imageToA4(node, filename){
+  const cont=document.createElement('div');
+  cont.style.cssText='position:absolute;left:-99999px;top:0;background:#fff;padding:16px;display:inline-block;text-align:center';
+  cont.appendChild(node);
+  document.body.appendChild(cont);
+  // 截圖前把所有 sticky 定位改為一般定位：sticky-col（左欄）會被 html2canvas 推到右邊；
+  // hdr-row th（日期/星期表頭，sticky top:0）會被擺到錯位、蓋住中間某列。一律改 static 才正常。
+  cont.querySelectorAll('.sticky-col, .hdr-row th').forEach(el=>{ el.style.position='static'; });
+  try{
+    // 依元素尺寸自動壓低 scale：避免 iOS canvas 單邊 >4096px 或面積過大產生空白
+    const baseW=cont.offsetWidth||800, baseH=cont.offsetHeight||600;
+    const MAXDIM=4000, MAXAREA=16000000;
+    let scale=Math.min(3, MAXDIM/baseW, MAXDIM/baseH);
+    if(baseW*baseH*scale*scale>MAXAREA) scale=Math.sqrt(MAXAREA/(baseW*baseH));
+    scale=Math.max(1, scale);
+    const canvas=await html2canvas(cont,{scale,backgroundColor:'#fff',useCORS:true});
+    const {jsPDF}=window.jspdf;
+    const iw=canvas.width, ih=canvas.height;
+    // 頁面尺寸直接吻合內容長寬比 → 內容滿版、不留白；手機開啟「符合寬度」即一頁完整呈現、不需滑動
+    const longSide=297; // mm（橫式長邊）
+    const shortSide=+(longSide*Math.min(iw,ih)/Math.max(iw,ih)).toFixed(1);
+    const pdf=new jsPDF({orientation: iw>=ih?'landscape':'portrait', unit:'mm', format:[longSide, shortSide], compress:true});
+    const pw=pdf.internal.pageSize.getWidth(), ph=pdf.internal.pageSize.getHeight();
+    const r=Math.min(pw/iw, ph/ih);          // 維持比例（頁面已吻合比例，等同滿版、無變形）
+    const w=iw*r, h=ih*r;
+    pdf.addImage(canvas.toDataURL('image/png'),'PNG',(pw-w)/2,(ph-h)/2,w,h); // PNG 文字清晰
+    deliverPdf(pdf, filename);
+  } finally {
+    document.body.removeChild(cont);
+  }
+}
+
+async function exportPDF(){
+  showToast('準備匯出PDF...',3000);
+  try{
+  await new Promise(r=>setTimeout(r,300));
+  const y=state.curYear,m=state.curMonth, store=getStore();
+  const box=document.createElement('div');
+  const title=document.createElement('div');
+  title.style.cssText='font-size:22px;font-weight:900;color:#111;margin-bottom:10px;white-space:nowrap';
+  title.textContent=`麻的🔥小辛辣　${store?store+'　':''}${y}年 ${m}月 班表`;
+  box.appendChild(title);
+  // 摘要列（營業額／人事成本／外送）— 放在標題下方、日期上方
+  const rev=getRevenue(y,m), cost=calcLaborCost(y,m), pct=rev>0?(cost/rev*100):0;
+  const deliv=getDelivery(y,m), lunch=Object.keys(deliv.lunch||{}).length, dinner=Object.keys(deliv.dinner||{}).length;
+  const summary=document.createElement('div');
+  summary.style.cssText='margin-bottom:10px;font-size:14px;color:#333';
+  summary.innerHTML=`預估營業額 $${rev.toLocaleString()}　｜　預估人事成本 $${cost.toLocaleString()}（${pct.toFixed(1)}%）　｜　外送次數 午餐 ${lunch}／晚餐 ${dinner}／合計 ${lunch+dinner} 次`;
+  box.appendChild(summary);
+  box.appendChild(document.getElementById('sch-table').cloneNode(true));
+  // 班別時段對照 — 只列「當月實際有排到、且有真正上班時段」的班別，
+  // 自動排除 國/公休（無時段）及未被排到的班（如 F1），避免版面過長
+  const shifts=getShifts();
+  const usedCodes=new Set();
+  Object.values(getSchedule(y,m)).forEach(emp=>Object.values(emp||{}).forEach(c=>{ if(c) usedCodes.add(c); }));
+  const legendEntries=sortedShiftEntries(shifts).filter(([code,sh])=>
+    usedCodes.has(code) && !sh.isOff && hasClockTime(sh.time)); // isOff 一律排除：休假類時段文字就算含數字也不該進圖例
+  if(legendEntries.length){
+    const legend=document.createElement('div');
+    legend.style.cssText='margin-top:12px;font-size:13px;line-height:2';
+    legend.innerHTML='<span style="font-weight:700;color:#111;margin-right:8px">班別時段</span>'
+      + legendEntries.map(([code,sh])=>
+          `<span style="display:inline-block;background:${sh.color};color:${sh.textColor};border-radius:6px;padding:3px 12px;margin:0 6px 4px 0;font-weight:700;white-space:nowrap">${code} <span style="font-weight:400">${fmtShiftTime(sh.time)}</span></span>`
+        ).join('');
+    box.appendChild(legend);
+  }
+  await imageToA4(box, `麻的小辛辣_${y}${fmt(m)}_班表.pdf`);
+  if(!isIOS()) showToast('✅ 班表PDF已下載');
+  }catch(e){ showToast('⚠️ 匯出失敗：'+(e&&e.message||e), 4000); }
+}
+
+async function exportSalaryPDF(){
+  showToast('準備匯出薪資PDF...',3000);
+  try{
+  await new Promise(r=>setTimeout(r,300));
+  const y=state.salYear,m=state.salMonth;
+  const emps=getEmployeesForMonth(y,m);
+  const settings=getSettings();
+  let totalGross=0,totalNet=0, rows='';
+  emps.forEach((emp,idx)=>{
+    const r=calcSalary(emp.id,y,m); if(!r) return;
+    totalGross+=r.grossPay; totalNet+=r.netPay;
+    rows+=`<tr style="background:${idx%2?'#fff':'#f9f9f9'}">
+      <td>${r.emp.name}</td><td>${r.workDays}天</td><td>${r.totalH.toFixed(1)}h</td>
+      <td>$${r.regularPay.toFixed(0)}</td><td>$${r.otPay.toFixed(0)}</td>
+      <td>$${r.holPay.toFixed(0)}</td><td>$${r.grossPay.toLocaleString()}</td>
+      <td>$${r.deductions.toLocaleString()}</td><td style="font-weight:700">$${r.netPay.toLocaleString()}</td></tr>`;
+  });
+  const box=document.createElement('div');
+  box.style.cssText='font-family:-apple-system,sans-serif;color:#111';
+  box.innerHTML=`
+    <div style="font-size:22px;font-weight:900;margin-bottom:4px">麻的🔥小辛辣　${getStore()||''}</div>
+    <div style="font-size:16px;font-weight:700;margin-bottom:10px">${y}年 ${m}月 薪資明細</div>
+    <table style="border-collapse:collapse;font-size:13px;white-space:nowrap">
+      <thead><tr style="background:#e74c3c;color:#fff">
+        ${['姓名','出勤天數','時數','底薪','加班費','假日費','應發','扣除','實領'].map(h=>`<th style="padding:6px 12px;border:1px solid #ddd">${h}</th>`).join('')}
+      </tr></thead>
+      <tbody>${rows.replace(/<td>/g,'<td style="padding:5px 12px;border:1px solid #eee;text-align:center">').replace(/<td style="font-weight:700">/g,'<td style="padding:5px 12px;border:1px solid #eee;text-align:center;font-weight:700">')}</tbody>
+      <tfoot><tr style="background:#ffe664;font-weight:700">
+        <td colspan="6" style="padding:6px 12px;border:1px solid #ddd;text-align:right">合計</td>
+        <td style="padding:6px 12px;border:1px solid #ddd;text-align:center">$${totalGross.toLocaleString()}</td>
+        <td style="padding:6px 12px;border:1px solid #ddd"></td>
+        <td style="padding:6px 12px;border:1px solid #ddd;text-align:center">$${totalNet.toLocaleString()}</td>
+      </tr></tfoot>
+    </table>
+    <div style="font-size:11px;color:#888;margin-top:10px">加班計算：正常工時 ${settings.regularHours}h／日，前 2h ×${settings.ot1}，超過 ×${settings.ot2}，國定假日 ×${settings.holRate}</div>`;
+  await imageToA4(box, `麻的小辛辣_${y}${fmt(m)}_薪資.pdf`);
+  if(!isIOS()) showToast('✅ 薪資PDF已下載');
+  }catch(e){ showToast('⚠️ 匯出失敗：'+(e&&e.message||e), 4000); }
+}
+
+function disconnectGist(){
+  // 移除 token → 退回唯讀模式（仍自動讀取雲端，只是不能上傳）
+  localStorage.removeItem('mala4w_gist_cfg');
+  updateGistStatus();
+  showToast('已解除編輯權限，改為唯讀模式');
+}
+
+// 把含 token 的「啟用編輯」連結分享/複製給自己的另一台裝置（手機用系統分享、電腦複製剪貼簿）
+async function shareGistLink(){
+  if(!getGistToken()){ showToast('此裝置未啟用編輯，無法產生連結'); return; }
+  const url=`${APP_URL_4W}#gist=${getGistId()}&token=${getGistToken()}`;
+  if(navigator.share){
+    try{ await navigator.share({title:'麻的🔥小辛辣 排班 — 啟用編輯', text:'打開即可在這台裝置啟用編輯（含金鑰，請勿外傳）', url}); return; }
+    catch(e){ if(e && e.name==='AbortError') return; } // 使用者取消分享就算了，不再 fallback
+  }
+  try{ await navigator.clipboard.writeText(url); showToast('✅ 已複製啟用連結，貼到你另一台裝置開啟即可（含金鑰，勿外傳）'); }
+  catch(e){ try{ window.prompt('複製這個啟用連結（含金鑰，勿外傳）：', url); }catch(_){ showToast('⚠️ 無法複製，請改用 QR'); } }
+}
+
+// 匯出備份：下載一個 JSON 檔（桌機直接下載；iOS 走可點連結，跟 PDF 一樣）
+// 內容直接用 buildSnapshot()（與雲端同步同一份收集邏輯，避免兩套過濾規則日後分岔）
+function exportBackup(){
+  const json=JSON.stringify(buildSnapshot(),null,2);
+  const blob=new Blob([json],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const fname=`mala-backup-${new Date().toISOString().slice(0,10)}.json`;
+  if(isIOS()){
+    let ov=document.getElementById('backup-link-overlay'); if(ov) ov.remove();
+    ov=document.createElement('div'); ov.id='backup-link-overlay';
+    ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px';
+    ov.innerHTML=`<div style="background:#fff;border-radius:16px;padding:24px;max-width:340px;width:100%;text-align:center">
+      <div style="font-size:17px;font-weight:800;margin-bottom:6px">備份已產生 💾</div>
+      <div style="font-size:13px;color:#666;line-height:1.6;margin-bottom:18px">點下方開啟，再按瀏覽器「分享」存到「檔案」</div>
+      <a href="${url}" download="${fname}" target="_blank" rel="noopener" style="display:block;background:var(--red);color:#fff;padding:13px;border-radius:10px;font-weight:700;text-decoration:none;margin-bottom:10px">開啟備份檔</a>
+      <button type="button" style="background:none;border:none;color:#888;font-size:14px;padding:6px" onclick="this.closest('#backup-link-overlay').remove()">關閉</button>
+    </div>`;
+    document.body.appendChild(ov);
+  } else {
+    const a=document.createElement('a'); a.href=url; a.download=fname;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 3000); // 延後釋放：部分瀏覽器（如 Firefox）非同步抓取 blob，立刻 revoke 會中斷下載
+    showToast('✅ 已匯出備份');
+  }
+}
+
+// 匯入備份：讀 JSON → 取代本機全部資料 → 若此裝置可編輯則發佈到雲端
+function importBackup(input){
+  const file=input.files&&input.files[0];
+  input.value=''; // 允許重選同一檔
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    let snap;
+    try{ snap=JSON.parse(reader.result); }catch(e){ showToast('⚠️ 檔案格式錯誤，不是有效 JSON'); return; }
+    if(!snap || typeof snap!=='object' || !Array.isArray(snap.mala4w_employees)){ showToast('⚠️ 不是有效的排班備份檔'); return; }
+    const canPublish = !IS_LOCAL_DEV && !!getGistToken();
+    const msg = canPublish
+      ? '匯入會用備份內容「取代」目前所有資料，並發佈到雲端（其他裝置會同步）。確定？'
+      : '匯入會用備份內容「取代」此裝置目前所有資料。確定？';
+    if(!confirm(msg)) return;
+    _suppressPush=true;
+    try{
+      // 真正「取代」：先清掉既有的 mala4w_ 資料（保留 token），否則備份裡沒有的鍵（如備份後新排的月份）會殘留並被發佈上雲端
+      const stale=[];
+      for(let i=0;i<localStorage.length;i++){
+        const k=localStorage.key(i);
+        if(/^mala4w_/.test(k) && k!=='mala4w_gist_cfg') stale.push(k);
+      }
+      stale.forEach(k=>localStorage.removeItem(k));
+      Object.entries(snap).forEach(([k,v])=>{
+        if(/^mala4w_/.test(k) && k!=='mala4w_gist_cfg'){ localStorage.setItem(k, JSON.stringify(v)); }
+      });
+    } finally {
+      _suppressPush=false; // 寫入中途出錯也不能讓自動上傳被永久關閉（會變成無聲不儲存）
+    }
+    renderSchedule();
+    if(typeof renderEmployees==='function') renderEmployees();
+    if(typeof renderSalary==='function') renderSalary();
+    if(typeof renderSettings==='function') renderSettings();
+    if(canPublish){ pushToGist(true); showToast('✅ 已匯入，正在發佈到雲端…'); }
+    else { showToast('✅ 已匯入此裝置'+(IS_LOCAL_DEV?'（本機測試版，不會上傳雲端）':'（此裝置唯讀，未上傳；請在有啟用編輯的裝置匯入才會發佈）')); }
+  };
+  reader.readAsText(file);
+}
+
+function updateGistStatus(){
+  const el=document.getElementById('gist-status');
+  if(!el) return;
+  const canEdit=!!getGistToken();
+  const editorUI=document.getElementById('gist-editor-ui');
+  const setupUI=document.getElementById('gist-setup-ui');
+  if(IS_LOCAL_DEV){
+    // 本機測試版：不跟雲端同步，編輯只存本機、不會被還原
+    el.innerHTML='🧪 本機測試版（不同步雲端，編輯只存本機、不會被還原）';
+    el.style.color='#b8860b';
+    if(editorUI) editorUI.style.display='none';
+    if(setupUI) setupUI.style.display='none';
+    return;
+  }
+  if(canEdit){
+    el.innerHTML=_pullFailStreak>=2
+      ? `🟠 已連線雲端（可編輯），但讀取雲端連續失敗 ${_pullFailStreak} 次，畫面可能不是最新`
+      : '🟢 已連線雲端（可編輯，每 30 秒自動同步）';
+    el.style.color=_pullFailStreak>=2 ? '#c77700' : 'var(--green)';
+    if(editorUI) editorUI.style.display='block';
+    if(setupUI) setupUI.style.display='none';
+    const qrDiv=document.getElementById('gist-qr');
+    if(qrDiv){
+      const setupUrl=`${APP_URL_4W}#gist=${getGistId()}&token=${getGistToken()}`;
+      qrDiv.innerHTML=`
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(setupUrl)}"
+             style="border-radius:8px;border:1px solid var(--border)" alt="QR">
+        <div style="font-size:11px;color:var(--gray);margin-top:6px">用另一裝置掃描 → 取得編輯權限</div>`;
+    }
+  } else {
+    el.innerHTML=_pullFailStreak>=2
+      ? `🟠 已連線雲端（唯讀），但讀取雲端連續失敗 ${_pullFailStreak} 次，畫面可能不是最新`
+      : '🟢 已連線雲端（唯讀，自動讀取最新）';
+    el.style.color=_pullFailStreak>=2 ? '#c77700' : 'var(--green)';
+    if(editorUI) editorUI.style.display='none';
+    if(setupUI) setupUI.style.display='block';
+  }
+}
+
+async function connectGist(){
+  const token=(document.getElementById('input-gist-token')?.value||'').trim();
+  if(!token){ showToast('請貼上 GitHub Token'); return; }
+  showToast('驗證中…', 2000);
+  // 先暫存 token，再用「真正的寫入」測試權限（GET 對公開 gist 連無權限的 token 也會過，無法驗證寫入）
+  saveGistCfg({gistId:getGistId(), token});
+  _lastPushFailed=false;
+  const ok=await pushToGist(false);
+  if(ok){ updateGistStatus(); showToast('✅ 已啟用編輯並上傳到雲端'); }
+  else {
+    // 寫入失敗 → 還原為唯讀；依失敗原因給訊息，網路問題不可誤怪 token（否則使用者會白白重新產生 token）
+    if(getGistToken()){
+      localStorage.removeItem('mala4w_gist_cfg'); updateGistStatus();
+      showToast(_lastPushErrKind==='network'
+        ? '⚠️ 啟用失敗：無法連線到 GitHub，請檢查網路後再試一次（Token 不一定有問題）。'
+        : '⚠️ 啟用失敗：此 Token 無法寫入（請確認有 gist 權限、未過期）。', 6000);
+    }
+  }
+}
+
+function clearAllData(){
+  if(!confirm('確定要清除所有資料？此操作無法復原！')) return;
+  const keys=[];
+  for(let i=0;i<localStorage.length;i++){
+    if(localStorage.key(i).startsWith('mala4w_')) keys.push(localStorage.key(i));
+  }
+  keys.forEach(k=>localStorage.removeItem(k));
+  showToast('已清除所有資料');
+  renderSchedule();
+  renderEmployees();
+  renderSalary();
+  renderSettings();
+}
+
+// ===== AUTO-SCHEDULE =====
+function getAutoRules(){ return {...{empRules:{}}, ...load('mala4w_auto_rules',{})}; }
+function saveAutoRules(r){ save('mala4w_auto_rules',r); }
+
+const DEFAULT_DAY_REQ={
+  weekday:[
+    {label:'E',  shifts:['E'],        count:1},
+    {label:'F',  shifts:['F'],        count:1},
+    {label:'B',  shifts:['B'],        count:1},
+    {label:'D',  shifts:['D'],        count:1},
+    {label:'C/D1/C2', shifts:['C','D1','C2'], count:1}
+  ],
+  saturday:[
+    {label:'A',  shifts:['A'],  count:2},
+    {label:'C',  shifts:['C'],  count:1},
+    {label:'D',  shifts:['D'],  count:1}
+  ],
+  sunday:[
+    {label:'A',  shifts:['A'],  count:2},
+    {label:'C',  shifts:['C'],  count:1},
+    {label:'C2', shifts:['C2'], count:1}
+  ]
+};
+function getDayReq(){ return load('mala4w_day_req', JSON.parse(JSON.stringify(DEFAULT_DAY_REQ))); }
+
+// 紅字天數：六、日＋國定假日
+function countRedDays(y,m){
+  const days=daysInMonth(y,m), hols=getHolidays(y,m);
+  let cnt=0;
+  for(let d=1;d<=days;d++){
+    const wk=weekday(y,m,d);
+    if(wk===0||wk===6||hols.includes(d)) cnt++;
+  }
+  return cnt;
+}
+
+function openAutoSchedule(){
+  const y=state.curYear, m=state.curMonth;
+  if(blockIfLocked(y,m)) return;
+  const emps=getEmployeesForMonth(y,m);
+  if(!emps.length){ showToast('本月沒有員工'); return; }
+  renderAutoScheduleModal(y,m);
+  openModal('auto-overlay');
+}
+
+function renderAutoScheduleModal(y,m){
+  const emps=getEmployeesForMonth(y,m);
+  const days=daysInMonth(y,m);
+  const holidays=getHolidays(y,m);
+  const sch=getSchedule(y,m);
+  const redDays=countRedDays(y,m);
+
+  function empRow(emp){
+    const empR=(getAutoRules().empRules||{})[emp.id]||{};
+    const isWorkMode=empR.designatedWorkMode||false;
+    const isFixedSchedule=!isWorkMode&&!!(empR.weekdayShift&&empR.offWeekends);
+    const empSch=sch[emp.id]||{};
+    const preSel=[];
+    const allowedShifts=empR.allowedShifts||['C'];
+    for(let d=1;d<=days;d++){
+      const c=empSch[d]||'';
+      if(isWorkMode){ if(allowedShifts.includes(c)||c==='C') preSel.push(d); }
+      else { if(c==='指') preSel.push(d); }
+    }
+    let dayBtns='';
+    for(let d=1;d<=days;d++){
+      const wk=weekday(y,m,d);
+      const isRed=wk===0||wk===6||holidays.includes(d);
+      const isSel=preSel.includes(d);
+      // 固定班規則：紅字天已自動休，按鈕灰掉不可選
+      if(isFixedSchedule&&isRed){
+        dayBtns+=`<button class="auto-day-btn red-day" style="opacity:0.35;cursor:default" disabled>${d}</button>`;
+        continue;
+      }
+      const selColor=isWorkMode?'#27ae60':'#e74c3c';
+      const cls='auto-day-btn'+(isRed&&!isWorkMode?' red-day':'')+(isSel?' selected':'');
+      const bg=isSel?`background:${selColor};color:#fff;border-color:${selColor}`:'';
+      dayBtns+=`<button class="${cls}" data-mode="${isWorkMode?'work':'leave'}"
+        style="${bg}" onclick="toggleLeaveDay('${emp.id}',${d},this)">${d}</button>`;
+    }
+    const tag=emp.isFullTime
+      ?`<span style="font-size:10px;color:#e67e22;margin-left:4px">正職</span>`
+      :`<span style="font-size:10px;color:#3498db;margin-left:4px">計時</span>`;
+    const hint=isWorkMode
+      ?`<span style="font-size:11px;font-weight:600;color:#27ae60;margin-left:6px">點選上班的日期</span>`
+      :isFixedSchedule
+      ?`<span style="font-size:11px;font-weight:600;color:#8e44ad;margin-left:6px">固定：平日${empR.weekdayShift}班，六日休｜可輸入指定休假日</span>`
+      :`<span style="font-size:11px;font-weight:400;color:var(--gray);margin-left:6px">點選不能上班的日期</span>`;
+    const pasteRow=isWorkMode?'':`
+      <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px">
+        <input type="text" id="leave-text-${emp.id}" placeholder="貼上指定休日期，如 9、10、15~17"
+          style="flex:1;max-width:300px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:12px"
+          onkeydown="if(event.key==='Enter'){event.preventDefault();applyLeaveText('${emp.id}',this,${days});}">
+        <button class="btn btn-outline btn-sm" onclick="applyLeaveText('${emp.id}',document.getElementById('leave-text-${emp.id}'),${days})">套用</button>
+      </div>`;
+    return `<div style="padding:10px 0;border-bottom:1px solid var(--border)">
+      <div style="font-weight:600;font-size:14px;margin-bottom:6px">${emp.name}${tag}${hint}</div>
+      ${pasteRow}
+      <div style="display:flex;flex-wrap:wrap;gap:3px" id="leaves-${emp.id}">${dayBtns}</div>
+    </div>`;
+  }
+
+  const ft=emps.filter(e=>e.isFullTime), pt=emps.filter(e=>!e.isFullTime);
+  let empRows='';
+  if(ft.length) empRows+=`<div style="font-size:11px;font-weight:700;color:#c0392b;padding:8px 0 2px">正職人員</div>`+ft.map(empRow).join('');
+  if(pt.length) empRows+=`<div style="font-size:11px;font-weight:700;color:#1f6aa5;padding:12px 0 2px">計時人員</div>`+pt.map(empRow).join('');
+
+  document.getElementById('auto-modal-body').innerHTML=`
+    <div style="background:#f0e8f8;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px">
+      📅 ${y}年${m}月 共 <strong>${redDays}</strong> 個紅字天數（六、日＋國定假日）—— 正職每人應休 <strong>${redDays}</strong> 天
+    </div>
+    ${empRows}
+    <div style="margin-top:12px;padding:10px;background:#fdecea;border-radius:8px;font-size:12px;color:#c0392b">
+      ⚠️ 生成後將覆蓋當月所有員工的班表。
+    </div>`;
+}
+
+function toggleLeaveDay(empId,d,btn){
+  const sel=btn.classList.toggle('selected');
+  const isWork=btn.dataset.mode==='work';
+  const activeColor=isWork?'#27ae60':'#e74c3c';
+  if(sel){ btn.style.background=activeColor; btn.style.color='#fff'; btn.style.borderColor=activeColor; }
+  else {
+    btn.style.background=''; btn.style.color='#333'; btn.style.borderColor='var(--border)';
+  }
+}
+
+// 解析純數字日期文字（如「9、10、15~17」「9,10,15-17」「9 10 15 16 17」）成排序去重的日期陣列
+function parseDayListText(text,maxDay){
+  if(!text) return [];
+  const days=new Set();
+  const norm=text
+    .replace(/[，、]/g,',')          // 全形逗號、頓號
+    .replace(/[～]/g,'~')            // 全形波浪號
+    .replace(/　/g,' ')          // 全形空白
+    .replace(/\s*~\s*/g,'~');        // 去掉波浪號前後空白，讓「9 ~ 12」也成立（- 須緊貼數字才算區段，避免吃到負號）
+  norm.split(/[,\s]+/).forEach(tok=>{
+    tok=tok.trim();
+    if(!tok) return;
+    const rng=tok.match(/^(\d+)[~-](\d+)$/);
+    if(rng){
+      let a=parseInt(rng[1],10), b=parseInt(rng[2],10);
+      if(a>b)[a,b]=[b,a];
+      for(let d=a;d<=b;d++) if(d>=1&&d<=maxDay) days.add(d);
+    } else if(/^\d+$/.test(tok)){
+      const d=parseInt(tok,10);
+      if(d>=1&&d<=maxDay) days.add(d);
+    }
+  });
+  return [...days].sort((a,b)=>a-b);
+}
+
+// 把輸入框文字解析後「取代」該員工的指定休選擇：清掉現有選擇，只勾選文字裡的日期
+function applyLeaveText(empId,inputEl,maxDay){
+  const days=parseDayListText(inputEl.value,maxDay);
+  if(!days.length){ showToast('沒有解析到日期，請確認格式'); return; }
+  const container=document.getElementById(`leaves-${empId}`);
+  if(!container) return;
+  const want=new Set(days);
+  let applied=0;
+  container.querySelectorAll('.auto-day-btn').forEach(btn=>{
+    if(btn.disabled) return; // 固定班規則員工的六日已自動休、按鈕停用，跳過
+    const d=parseInt(btn.textContent,10);
+    const sel=want.has(d);
+    if(sel!==btn.classList.contains('selected')) toggleLeaveDay(empId,d,btn);
+    if(sel) applied++;
+  });
+  inputEl.value='';
+  showToast(`✅ 已套用 ${applied} 天指定休`);
+}
+
+function runAutoSchedule(){
+  const y=state.curYear, m=state.curMonth;
+  const emps=getEmployeesForMonth(y,m);
+  const rules=getAutoRules();
+  const cannotWork={}, workDays={};
+  emps.forEach(emp=>{
+    const container=document.getElementById(`leaves-${emp.id}`);
+    const isWorkMode=(rules.empRules||{})[emp.id]?.designatedWorkMode||false;
+    const days=[];
+    if(container) container.querySelectorAll('.auto-day-btn.selected').forEach(btn=>{
+      days.push(parseInt(btn.textContent));
+    });
+    if(isWorkMode) workDays[emp.id]=days;
+    else cannotWork[emp.id]=days;
+  });
+  const sch=getSchedule(y,m);
+  const result=autoGenAlgo(y,m,{cannotWork,workDays});
+  emps.forEach(emp=>{ sch[emp.id]=result[emp.id]||{}; });
+  saveSchedule(y,m,sch);
+  closeModal('auto-overlay');
+  renderSchedule();
+  showToast('✅ 班表已自動生成');
+}
+
+// 只代入指休/指定上班，不跑自動生成演算法；與彈窗勾選同步（取消勾選的就清掉），其餘日期不動
+function applyDesignatedOnly(){
+  const y=state.curYear, m=state.curMonth;
+  if(blockIfLocked(y,m)) return;
+  const emps=getEmployeesForMonth(y,m);
+  const rules=getAutoRules();
+  const days=daysInMonth(y,m);
+  const sch=getSchedule(y,m);
+  let touched=0;
+  emps.forEach(emp=>{
+    const empR=(rules.empRules||{})[emp.id]||{};
+    const isWorkMode=empR.designatedWorkMode||false;
+    const container=document.getElementById(`leaves-${emp.id}`);
+    if(!container) return;
+    const selected=new Set();
+    container.querySelectorAll('.auto-day-btn.selected').forEach(btn=>selected.add(parseInt(btn.textContent,10)));
+    if(!sch[emp.id]) sch[emp.id]={};
+    const empSch=sch[emp.id];
+    if(isWorkMode){
+      // 指定上班：勾選日寫指定班別（已是允許班別就保留）；取消勾選但原本是指定班別的日 → 清空
+      const shift=(empR.allowedShifts&&empR.allowedShifts.length)?empR.allowedShifts[0]:'C';
+      // 只認允許班別為「指定班別」；不可無條件加 'C'，否則會誤刪手動排的 C 班（如只允許 D 的員工）
+      const allowed=new Set(empR.allowedShifts&&empR.allowedShifts.length?empR.allowedShifts:['C']);
+      for(let d=1;d<=days;d++){
+        const cur=empSch[d];
+        if(selected.has(d)){
+          if(!(cur&&allowed.has(cur))){ empSch[d]=shift; touched++; }
+        } else if(cur&&allowed.has(cur)){
+          delete empSch[d]; touched++;
+        }
+      }
+    } else {
+      // 指休（含固定班規則員工）：勾選日寫「指」；取消勾選但原本是「指」的日 → 清空；其餘不動
+      for(let d=1;d<=days;d++){
+        const cur=empSch[d];
+        if(selected.has(d)){
+          if(cur!=='指'){ empSch[d]='指'; touched++; }
+        } else if(cur==='指'){
+          delete empSch[d]; touched++;
+        }
+      }
+    }
+  });
+  saveSchedule(y,m,sch);
+  closeModal('auto-overlay');
+  renderSchedule();
+  showToast(`✅ 已代入指休/指定上班（更動 ${touched} 格，未生成班表）`);
+}
+
+function autoGenAlgo(y,m,inputData){
+  // inputData = { cannotWork:{empId:[days]}, workDays:{empId:[days]} }
+  const days=daysInMonth(y,m);
+  const holidays=getHolidays(y,m);
+  const rules=getAutoRules();
+  const dayReq=getDayReq();
+  const emps=getEmployeesForMonth(y,m);
+  const sch={};
+  emps.forEach(e=>{ sch[e.id]={}; });
+
+  const isOff=c=>!c||c==='休'||c==='指'||c==='特'||c==='國'||c==='公休';
+  const getDT=d=>{
+    const wk=weekday(y,m,d);
+    return wk===6?'saturday':wk===0?'sunday':'weekday';
+  };
+
+  // 計算週清單 (週日為起點)
+  const firstWk=weekday(y,m,1);
+  const weeks=[];
+  for(let ws=1-firstWk;ws<=days;ws+=7){
+    const wk=[];
+    for(let d=ws;d<ws+7;d++){ if(d>=1&&d<=days) wk.push(d); }
+    if(wk.length) weeks.push(wk);
+  }
+
+  // ── 步驟1：鎖定特殊員工 ──
+  emps.forEach(emp=>{
+    const empR=(rules.empRules||{})[emp.id]||{};
+
+    // 不能上班日 → 指
+    (inputData.cannotWork[emp.id]||[]).forEach(d=>{ sch[emp.id][d]='指'; });
+
+    // 固定班型：平日固定班別＋六日國定休
+    if(empR.weekdayShift&&empR.offWeekends){
+      for(let d=1;d<=days;d++){
+        if(sch[emp.id][d]) continue;
+        const wk=weekday(y,m,d);
+        if(wk===0||wk===6||holidays.includes(d)) sch[emp.id][d]='休';
+        else sch[emp.id][d]=empR.weekdayShift;
+      }
+    }
+
+    // 指定上班型：指定上班日=允許班別(第一個)，其餘休
+    if(empR.designatedWorkMode){
+      const shift=(empR.allowedShifts&&empR.allowedShifts.length)?empR.allowedShifts[0]:'C';
+      for(let d=1;d<=days;d++){
+        if(sch[emp.id][d]) continue;
+        if((inputData.workDays[emp.id]||[]).includes(d)) sch[emp.id][d]=shift;
+        else sch[emp.id][d]='休';
+      }
+    }
+  });
+
+  // 餘下員工（一般排班）
+  const activeEmps=emps.filter(emp=>{
+    const empR=(rules.empRules||{})[emp.id]||{};
+    return !(empR.weekdayShift&&empR.offWeekends)&&!empR.designatedWorkMode;
+  });
+
+  // 計算正職員工月休假預算（指+休+國 = 紅字天數）
+  const redDays=countRedDays(y,m);
+  const restBudget={}, 休used={};
+  activeEmps.forEach(emp=>{
+    休used[emp.id]=0;
+    if(!emp.isFullTime) return;
+    const empR2=(rules.empRules||{})[emp.id]||{};
+    if(empR2.monthlyRestLimit!=null) return;
+    const 指cnt=(inputData.cannotWork[emp.id]||[]).length;
+    const 国cnt=holidays.filter(d=>!(inputData.cannotWork[emp.id]||[]).includes(d)).length;
+    restBudget[emp.id]=Math.max(0,redDays-指cnt-国cnt);
+  });
+
+  // ── 步驟2：每週確保每人有 2 天休假，優先休「人力最充裕」的日子 ──
+  weeks.forEach((week,weekIdx)=>{
+    // 計算各日「需求人數」（只算一般員工）
+    const demand={};
+    week.forEach(d=>{
+      const dt=getDT(d);
+      const tot=(dayReq[dt]||[]).reduce((s,r)=>s+r.count,0);
+      // 已被特殊員工覆蓋的需求
+      let covered=0;
+      emps.filter(e=>!activeEmps.includes(e)).forEach(e=>{
+        if(!isOff(sch[e.id][d])) covered++;
+      });
+      demand[d]=Math.max(0,tot-covered);
+    });
+
+    // 追蹤「確定上班」人數（隨休假分配更新）
+    const committed={};
+    week.forEach(d=>{ committed[d]=0; });
+
+    // 優先處理「指定休最多」的員工（彈性最小）
+    const offSet=c=>c&&isOff(c); // 只計算明確設定的休假（不含未分配）
+    const sorted=[...activeEmps].sort((a,b)=>{
+      const ar=week.filter(d=>offSet(sch[a.id][d])).length;
+      const br=week.filter(d=>offSet(sch[b.id][d])).length;
+      return br-ar;
+    });
+
+    sorted.forEach(emp=>{
+      const empMR=(rules.empRules||{})[emp.id]||{};
+      const existRest=week.filter(d=>offSet(sch[emp.id][d])).length;
+      const avail=week.filter(d=>!sch[emp.id][d]);
+
+      // monthlyRestLimit: rest days pre-assigned in Step 1; just count working days
+      if(empMR.monthlyRestLimit!=null){ avail.forEach(d=>committed[d]++); return; }
+
+      // 每週應休天數按當週實際天數比例（完整 7 天＝2 天）；月初/月底不完整的週（如只有 1 天或 2 天）不再硬湊 2 天休假，否則會把當天所有人強制排休
+      const weekQuota=Math.round(2*week.length/7);
+      let need=Math.max(0,weekQuota-existRest);
+      // 正職：限制每月 (指+休+國) = 紅字天數，將剩餘預算平均分配到剩餘週數
+      if(emp.isFullTime&&restBudget[emp.id]!=null){
+        const remaining=restBudget[emp.id]-休used[emp.id];
+        const remWeeks=weeks.length-weekIdx;
+        need=Math.min(need,Math.max(0,Math.ceil(remaining/remWeeks)));
+      }
+      if(need===0){ avail.forEach(d=>committed[d]++); return; }
+
+      // 選「surplus最大」的日子休假（surplus=committed - demand，越高越可以少一人）
+      const score=d=>committed[d]-demand[d];
+      const bySurplus=[...avail].sort((a,b)=>score(b)-score(a));
+      const restSet=new Set(bySurplus.slice(0,need).map(d=>d));
+
+      avail.forEach(d=>{
+        if(restSet.has(d)){
+          sch[emp.id][d]='休';
+          if(emp.isFullTime&&restBudget[emp.id]!=null) 休used[emp.id]++;
+        } else committed[d]++;
+      });
+    });
+  });
+
+  // ── 步驟3：依每日班別需求分配班別 ──
+  for(let d=1;d<=days;d++){
+    const dt=getDT(d);
+    // 國定假日：一般員工標記「國」，不套用班別需求
+    if(holidays.includes(d)){
+      activeEmps.forEach(emp=>{ if(!sch[emp.id][d]) sch[emp.id][d]='國'; });
+      continue;
+    }
+
+    const reqs=(dayReq[dt]||[]).map(r=>({...r,rem:r.count}));
+
+    // 扣除特殊員工已覆蓋的需求
+    emps.filter(e=>!activeEmps.includes(e)).forEach(e=>{
+      const code=sch[e.id][d];
+      if(!code||isOff(code)) return;
+      for(const r of reqs){ if(r.shifts.includes(code)&&r.rem>0){r.rem--;break;} }
+    });
+
+    // 本日上班的一般員工
+    const workers=activeEmps.filter(emp=>!sch[emp.id][d]);
+    const assigned=new Set();
+
+    // 特異度低的需求（選擇少）先分配
+    reqs.sort((a,b)=>a.shifts.length-b.shifts.length);
+
+    for(const req of reqs){
+      for(let i=0;i<req.rem;i++){
+        // 找能排此班的員工
+        let pick=workers.find(e=>{
+          if(assigned.has(e.id)) return false;
+          const allowed=(rules.empRules||{})[e.id]?.allowedShifts||[];
+          return req.shifts.some(s=>allowed.includes(s));
+        });
+        // 找不到有允許班別的就隨機取一個未指派的
+        if(!pick) pick=workers.find(e=>!assigned.has(e.id));
+        if(!pick) break;
+        const allowed=(rules.empRules||{})[pick.id]?.allowedShifts||[];
+        sch[pick.id][d]=req.shifts.find(s=>allowed.includes(s))||req.shifts[0];
+        assigned.add(pick.id);
+      }
+    }
+
+    // 剩餘未指派但上班的員工 → 優先選當日需求中的允許班別，避免排出需求外的班別
+    const dayShifts=[...new Set(reqs.flatMap(r=>r.shifts))];
+    workers.forEach(emp=>{
+      if(!assigned.has(emp.id)){
+        const allowed=(rules.empRules||{})[emp.id]?.allowedShifts||[];
+        const best=allowed.find(s=>dayShifts.includes(s))||allowed[0]||dayShifts[0]||'A';
+        sch[emp.id][d]=best;
+        assigned.add(emp.id);
+      }
+    });
+  }
+
+  return sch;
+}
+
+// ===== AUTO-RULES SETTINGS =====
+function renderAutoRulesSettings(){
+  const all=getEmployees().filter(e=>e.active!==false);
+  const el=document.getElementById('auto-rules-list');
+  if(!el) return;
+  if(!all.length){ el.innerHTML='<div style="color:var(--gray);font-size:13px;text-align:center;padding:12px">尚無員工</div>'; return; }
+
+  const rules=getAutoRules();
+  const shifts=getShifts();
+  const workShifts=sortedShiftEntries(shifts).filter(([,sh])=>!sh.isOff);
+  function empBlock(emp){
+    const r=(rules.empRules||{})[emp.id]||{};
+    const allowed=r.allowedShifts||[];
+    const shiftBtns=workShifts.map(([code,sh])=>{
+      const active=allowed.includes(code);
+      return `<button onclick="toggleAllowedShift('${emp.id}','${code}',this)"
+        style="padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;
+               border:2px solid ${active?'var(--red)':'var(--border)'};
+               background:${sh.color};color:${sh.textColor}">${code}</button>`;
+    }).join('');
+
+    const designatedWorkMode=r.designatedWorkMode||false;
+    let extra=`
+      <div class="form-group" style="margin-bottom:8px">
+        <label><input type="checkbox" onchange="saveEmpAutoRule('${emp.id}','designatedWorkMode',this.checked)"
+          ${designatedWorkMode?'checked':''} style="width:auto;margin-right:6px">指定上班模式（每月輸入上班日，固定排允許班別，不套用一般規則）</label>
+      </div>`;
+    if(emp.isFullTime){
+      const weekdayShift=r.weekdayShift||'';
+      const offWeekends=r.offWeekends||false;
+      const monthlyRestLimit=r.monthlyRestLimit!=null?r.monthlyRestLimit:null;
+      const wdOpts=`<option value="">-- 依允許班別輪排 --</option>`+
+        workShifts.map(([code])=>`<option value="${code}" ${weekdayShift===code?'selected':''}>${code}</option>`).join('');
+      extra+=`
+        <div class="form-group" style="margin-bottom:8px">
+          <label>平日固定班別<span style="font-size:11px;color:var(--gray);margin-left:4px">（留空則從允許班別輪排）</span></label>
+          <select onchange="saveEmpAutoRule('${emp.id}','weekdayShift',this.value)"
+            style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;width:100%">${wdOpts}</select>
+        </div>
+        <div class="form-group" style="margin-bottom:8px">
+          <label><input type="checkbox" onchange="saveEmpAutoRule('${emp.id}','offWeekends',this.checked)"
+            ${offWeekends?'checked':''} style="width:auto;margin-right:6px">特殊規則：六、日及國定假日一律排休</label>
+        </div>
+        <div class="form-group" style="margin-bottom:8px">
+          <label style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+            <input type="checkbox" onchange="onMonthlyRestLimitToggle('${emp.id}',this.checked)"
+              ${monthlyRestLimit!=null?'checked':''} style="width:auto;margin-right:2px">
+            每月只排休
+            <input type="number" id="mrl-${emp.id}" min="0" max="31"
+              value="${monthlyRestLimit!=null?monthlyRestLimit:2}"
+              onchange="saveEmpAutoRule('${emp.id}','monthlyRestLimit',parseInt(this.value)||0)"
+              style="width:46px;padding:3px 4px;border:1px solid var(--border);border-radius:4px;font-size:13px"
+              ${monthlyRestLimit==null?'disabled':''}>
+            天，其餘全上班
+          </label>
+        </div>`;
+    }
+
+    return `<div style="padding:12px 0;border-bottom:1px solid var(--border)">
+      <div style="font-weight:700;font-size:14px;margin-bottom:10px">
+        ${emp.name}
+        <span style="font-size:11px;font-weight:400;margin-left:6px;color:${emp.isFullTime?'#e67e22':'#3498db'}">${emp.isFullTime?'正職':'計時'}</span>
+      </div>
+      ${extra}
+      <div class="form-group" style="margin-bottom:0">
+        <label>允許班別</label>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">${shiftBtns}</div>
+      </div>
+    </div>`;
+  }
+
+  const ft=all.filter(e=>e.isFullTime), pt=all.filter(e=>!e.isFullTime);
+  let html='';
+  if(ft.length) html+=`<div style="font-size:11px;font-weight:700;color:#c0392b;padding:8px 0 2px">正職人員</div>`+ft.map(empBlock).join('');
+  if(pt.length) html+=`<div style="font-size:11px;font-weight:700;color:#1f6aa5;padding:14px 0 2px">計時人員</div>`+pt.map(empBlock).join('');
+  el.innerHTML=html;
+}
+
+
+function toggleAllowedShift(empId,code,btn){
+  const rules=getAutoRules();
+  if(!rules.empRules) rules.empRules={};
+  if(!rules.empRules[empId]) rules.empRules[empId]={};
+  let allowed=rules.empRules[empId].allowedShifts||[];
+  if(allowed.includes(code)){
+    allowed=allowed.filter(c=>c!==code);
+    btn.style.border='2px solid var(--border)';
+  } else {
+    allowed.push(code);
+    btn.style.border='2px solid var(--red)';
+  }
+  rules.empRules[empId].allowedShifts=allowed;
+  saveAutoRules(rules);
+}
+
+function saveEmpAutoRule(empId,key,value){
+  const rules=getAutoRules();
+  if(!rules.empRules) rules.empRules={};
+  if(!rules.empRules[empId]) rules.empRules[empId]={};
+  rules.empRules[empId][key]=value;
+  saveAutoRules(rules);
+}
+
+function onMonthlyRestLimitToggle(empId,checked){
+  const rules=getAutoRules();
+  if(!rules.empRules) rules.empRules={};
+  if(!rules.empRules[empId]) rules.empRules[empId]={};
+  const inp=document.getElementById('mrl-'+empId);
+  if(checked){
+    if(inp) inp.disabled=false;
+    rules.empRules[empId].monthlyRestLimit=inp?parseInt(inp.value)||2:2;
+  } else {
+    if(inp) inp.disabled=true;
+    delete rules.empRules[empId].monthlyRestLimit;
+  }
+  saveAutoRules(rules);
+}
+
+// ===== DEMO DATA =====
+function loadDemoData(){
+  if(getEmployees().length) return;
+  saveEmployees(DEMO_EMPS_4W.map(e=>({...e,id:uid()})));
+}
+// 示範用假資料（無真實姓名、電話）
+const DEMO_EMPS_4W=[
+  {name:'王大明',hireDate:'2022-10-01',phone:'',wage:0,base:42000,insurance:2000,dormitory:0,isFullTime:true},
+  {name:'林淑芬',hireDate:'2023-03-01',phone:'',wage:0,base:38000,insurance:1800,dormitory:0,isFullTime:true},
+  {name:'陳建宏',hireDate:'2024-06-01',phone:'',wage:0,base:36000,insurance:1700,dormitory:0,isFullTime:true},
+  {name:'張雅婷',hireDate:'2025-01-15',phone:'',wage:0,base:34000,insurance:1600,dormitory:0,isFullTime:true},
+  {name:'吳俊傑',hireDate:'2025-05-01',phone:'',wage:190,base:0,insurance:0,dormitory:0,isFullTime:false},
+  {name:'黃美玲',hireDate:'2025-09-01',phone:'',wage:190,base:0,insurance:0,dormitory:0,isFullTime:false},
+  {name:'李佳穎',hireDate:'2026-02-01',phone:'',wage:190,base:0,insurance:0,dormitory:0,isFullTime:false},
+  {name:'劉宗翰',hireDate:'2026-06-01',phone:'',wage:190,base:0,insurance:0,dormitory:0,isFullTime:false},
+];
+
+// ===== TAIWAN OFFICIAL HOLIDAYS =====
+// 放假日陣列由 TW_HOLIDAY_NAMES 自動產生（單一來源，避免名稱與日期不一致）
+const TW_HOLIDAYS = {};
+for(const yy in TW_HOLIDAY_NAMES){
+  TW_HOLIDAYS[yy]={};
+  for(const mm in TW_HOLIDAY_NAMES[yy]){
+    TW_HOLIDAYS[yy][mm]=Object.keys(TW_HOLIDAY_NAMES[yy][mm]).map(Number);
+  }
+}
+
+// 行事曆版本：修正後 bump 此值，會強制各裝置以官方行事曆重新覆蓋本機放假日
+const HOLIDAY_VERSION='2026.4w.1';
+
+function seedHolidays(){
+  _suppressPush=true;
+  const force = localStorage.getItem('mala4w_hol_ver')!==HOLIDAY_VERSION;
+  if(force){
+    // 清除舊版自動帶入的放假日，避免失效補假殘留（如舊版 6/22、3/2）
+    const del=[];
+    for(let i=0;i<localStorage.length;i++){
+      const k=localStorage.key(i);
+      if(k && /^mala4w_hol_\d+_\d+$/.test(k)) del.push(k);
+    }
+    del.forEach(k=>localStorage.removeItem(k));
+  }
+  for(const yy in TW_HOLIDAYS){
+    for(const mm in TW_HOLIDAYS[yy]){
+      const key=`mala4w_hol_${yy}_${mm}`;
+      if(force || !load(key,[]).length){
+        localStorage.setItem(key, JSON.stringify(TW_HOLIDAYS[yy][mm]));
+      }
+    }
+  }
+  localStorage.setItem('mala4w_hol_ver', HOLIDAY_VERSION);
+  _suppressPush=false;
+}
+
+// 安全網：本機若殘留舊班別碼 H，改為 H1（雲端已另行遷移，本機不推送）
+function migrateShiftCodes(){
+  _suppressPush=true;
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k && /^mala4w_sch_\d+_\d+$/.test(k)){
+      const s=load(k,{}); let mod=false;
+      for(const eid in s){ for(const d in s[eid]){ if(s[eid][d]==='H'){ s[eid][d]='H1'; mod=true; } } }
+      if(mod) localStorage.setItem(k, JSON.stringify(s));
+    }
+  }
+  _suppressPush=false;
+}
+
+// ===== INIT (cloud-first：任何裝置都自動讀取雲端，免設定) =====
+(async function init(){
+  // 1) 從網址 hash 取得編輯權限：#gist=ID&token=TOKEN（給「啟用編輯」的裝置用）
+  const hash=location.hash.slice(1);
+  if(hash.includes('token=')){
+    const p=new URLSearchParams(hash);
+    const gistId=p.get('gist')||getGistId(), token=p.get('token');
+    if(token){ saveGistCfg({gistId,token}); history.replaceState(null,'',location.pathname); }
+  }
+  // 2) 雲端同步：線上版才自動讀取雲端 + 啟動 30 秒輪詢；本機測試版完全不同步
+  if(!IS_LOCAL_DEV){
+    await pullFromGist(false);
+    // 若此裝置可編輯，補推本機獨有的資料（例如連雲端前設定的固定成本）
+    scheduleGistPush();
+    startGistPolling();
+  }
+  // 本機測試版：保留 localStorage 既有資料、不會被還原；若完全空白才載入示範資料
+  // 3) 僅在「雲端尚未有資料、本機也沒資料、且無編輯權限」時載入示範資料（避免覆蓋雲端）
+  if((IS_LOCAL_DEV || !getGistToken()) && !getEmployees().length){ loadDemoData(); }
+  // 4) 補上雲端未定義月份的預設國定假日（不推送）
+  seedHolidays();
+  // 4b) 安全網：本機殘留的舊 H 班碼改為 H1
+  migrateShiftCodes();
+  // 5) render
+  renderSchedule();
+  _initDone=true; // 之後的編輯才算使用者操作，唯讀時才提示
+})();
+
+// ===================== 四週變形工時檢核 =====================
+// 這一版跟月曆版最大的差別：法定上限是按「28 天週期」算，不是按曆月。
+// 所以檢核要跨月讀班表，班表頁下方會列出本月涵蓋到的每一期結果。
+// 規章第六條：2026-10-04（星期日）起算，28 日一期。
+const CYC4W = {y:2026, m:10, d:4}, CYCLEN4W = 28;
+const CAP_N4W = 160, CONSEC4W = 12, GAP4W = 11*60, DAY_N4W = 10, DAY_T4W = 12;
+function dnum4(y,m,d){ return Math.round(Date.UTC(y,m-1,d)/86400000); }
+function dfrom4(n){ const t=new Date(n*86400000);
+  return {y:t.getUTCFullYear(), m:t.getUTCMonth()+1, d:t.getUTCDate()}; }
+const CYCBASE4W = dnum4(CYC4W.y,CYC4W.m,CYC4W.d);
+function cycIdx4(y,m,d){ return Math.floor((dnum4(y,m,d)-CYCBASE4W)/CYCLEN4W); }
+function cycDates4(i){ const a=[]; for(let k=0;k<CYCLEN4W;k++) a.push(dfrom4(CYCBASE4W+i*CYCLEN4W+k)); return a; }
+function cycLabel4(i){ const a=cycDates4(i), s=a[0], e=a[27];
+  return `T${String(i+1).padStart(2,'0')}　${s.y}/${String(s.m).padStart(2,'0')}/${String(s.d).padStart(2,'0')}–${String(e.m).padStart(2,'0')}/${String(e.d).padStart(2,'0')}`; }
+// 本月涵蓋到哪幾期（一個月最多橫跨 2–3 期）
+function cyclesOfMonth(y,m){
+  const set=new Set(), days=daysInMonth(y,m);
+  for(let d=1;d<=days;d++) set.add(cycIdx4(y,m,d));
+  return [...set].sort((a,b)=>a-b).filter(i=>i>=0);
+}
+
+// 班別的正常工時與時段（時段用來算 11 小時間隔，F 班那種兩段式取頭尾）
+function hrs4(code,shifts){ const s=shifts[code]; return (s&&!s.isOff)?(+s.hours||0):0; }
+function span4(code,shifts){
+  const s=shifts[code]; if(!s||s.isOff||!(+s.hours>0)) return null;
+  const t=String(s.time||'').replace(/[~～]/g,'～');
+  const rs=t.match(/(\d{1,2}):(\d{2})\s*～\s*(\d{1,2}):(\d{2})/g);
+  if(!rs||!rs.length) return null;
+  const pick=r=>{ const m=r.match(/(\d{1,2}):(\d{2})\s*～\s*(\d{1,2}):(\d{2})/);
+    return {a:+m[1]*60+ +m[2], b:+m[3]*60+ +m[4]}; };
+  const first=pick(rs[0]), last=pick(rs[rs.length-1]);
+  let st=first.a, en=last.b; if(en<=st) en+=1440;
+  return {st, en};
+}
+
+// 跨月取格子（快取每個月的班表，避免重複 load）
+function cellReader4(){
+  const cache={};
+  return (y,m,d,empId)=>{
+    const k=y+'_'+m;
+    if(!cache[k]) cache[k]=getSchedule(y,m);
+    return (cache[k][empId]||{})[d]||'';
+  };
+}
+
+// 單一週期的檢核。回傳每人一列統計 ＋ 問題清單
+function check4W(cycleIdx){
+  const dates=cycDates4(cycleIdx), shifts=getShifts(), get=cellReader4();
+  // 取這一期會用到的員工：以期間中點那個月為準
+  const mid=dates[13];
+  const emps=getEmployeesForMonth(mid.y, mid.m);
+  const holSet={}; const seen={};
+  dates.forEach(x=>{ const k=x.y+'_'+x.m;
+    if(!seen[k]){ seen[k]=getHolidays(x.y,x.m); }
+    if(seen[k].includes(x.d)) holSet[x.y+'-'+x.m+'-'+x.d]=1; });
+  const isHol=x=>!!holSet[x.y+'-'+x.m+'-'+x.d];
+  const md=x=>`${x.m}/${x.d}`;
+
+  const rows=[], issues=[];
+  emps.forEach(emp=>{
+    const add=(lvl,rid,msg,when)=>issues.push({lvl,rid,who:emp.name,msg,when:when||''});
+    const codes=dates.map(x=>get(x.y,x.m,x.d,emp.id));
+    const filled=codes.filter(c=>c).length;
+    if(!filled){ rows.push({emp,nsum:0,ne:0,nr:0,nd:0,nh:0,filled:0}); return; }
+
+    let nsum=0,ne=0,nr=0,nd=0,nh=0;
+    codes.forEach((c,i)=>{
+      const h=hrs4(c,shifts); nsum+=h;
+      if(c==='例')ne++; else if(c==='休'||c==='指'||c==='公休')nr++; else if(c==='多')nd++; else if(c==='國')nh++;
+      if(h>DAY_N4W) add('crit','R2',`${md(dates[i])} 單日正常工時 ${h} 小時，超過 10 小時上限`,md(dates[i]));
+      else if(h>DAY_T4W) add('crit','R3',`${md(dates[i])} 單日工時 ${h} 小時，超過 12 小時`,md(dates[i]));
+      if(isHol(dates[i])){
+        if(c==='多') add('crit','R9',`${md(dates[i])} 是國定假日，不得排成空班日「多」`,md(dates[i]));
+        else if(c==='例'||c==='休') add('warn','R10',`${md(dates[i])} 國定假日與${c==='例'?'例假':'休息日'}重疊，要另給補假（日期與本人協商）`,md(dates[i]));
+      }
+    });
+    // 換班間隔 11 小時
+    for(let i=0;i<codes.length-1;i++){
+      const a=span4(codes[i],shifts), b=span4(codes[i+1],shifts);
+      if(!a||!b) continue;
+      const gap=(1440+b.st)-a.en;
+      if(gap<GAP4W) add('crit','R7',
+        `${md(dates[i])} 下班到 ${md(dates[i+1])} 上班只隔 ${(gap/60).toFixed(1)} 小時，不足 11 小時`,
+        `${md(dates[i])}→${md(dates[i+1])}`);
+    }
+    // 連續出勤（往前回看 13 天接上一期）
+    let run=[], runs=[];
+    for(let k=-13;k<CYCLEN4W;k++){
+      const x=dfrom4(CYCBASE4W+cycleIdx*CYCLEN4W+k);
+      const c=get(x.y,x.m,x.d,emp.id);
+      if(hrs4(c,shifts)>0){ run.push(x); } else { if(run.length)runs.push(run); run=[]; }
+    }
+    if(run.length)runs.push(run);
+    runs.forEach(rr=>{ if(rr.length>CONSEC4W)
+      add('crit','R6',`自 ${md(rr[0])} 連續出勤到 ${md(rr[rr.length-1])} 共 ${rr.length} 日，超過 12 日內控上限`,
+          `${md(rr[0])}→${md(rr[rr.length-1])}`); });
+    // 例假與例休總量
+    const e1=codes.slice(0,14).filter(c=>c==='例').length;
+    const e2=codes.slice(14).filter(c=>c==='例').length;
+    if(e1<2) add('crit','R4',`第 1–14 日只排 ${e1} 日例假，每二週至少 2 日`);
+    if(e2<2) add('crit','R4',`第 15–28 日只排 ${e2} 日例假，每二週至少 2 日`);
+    if(ne+nr<8) add('crit','R5',`例假 ${ne} 日＋休息日 ${nr} 日（含指定休、公休）＝${ne+nr} 日，未達四週至少 8 日`);
+    if(nsum>CAP_N4W) add('crit','R1',`本期排定正常工時 ${nsum} 小時，超過四週 160 小時上限`);
+    if(filled<CYCLEN4W) add('warn','',`本期還有 ${CYCLEN4W-filled} 天沒排`);
+    rows.push({emp,nsum,ne,nr,nd,nh,filled});
+  });
+  return {rows, issues, dates};
+}
+
+const RULES4W={
+  R1:'勞基法 §30 I 每週 40 小時，依 §30-1 I① 分配於四週',
+  R2:'勞基法 §30-1 I①：每日至多移入 2 小時',
+  R3:'勞基法 §32 II 單日正常＋延長不得超過 12 小時',
+  R4:'勞基法 §36 II③ 每二週至少 2 日例假',
+  R5:'勞基法 §36 II③ 每四週例假＋休息日至少 8 日',
+  R6:'規章第八條內控（法令未設上限，四週變形理論可連上 24 日）',
+  R7:'勞基法 §34 II，餐飲業不在得縮為 8 小時的公告名單內',
+  R9:'規章修訂建議，直接避開國定假日遇空班日的函釋爭議',
+  R10:'勞基法施行細則 §23-1，補假日期由勞雇協商，不照政府日曆'
+};
+
+function render4W(){
+  const el=document.getElementById('sch-4w'); if(!el) return;
+  const y=state.curYear, m=state.curMonth;
+  const idxs=cyclesOfMonth(y,m);
+  if(!idxs.length){ el.innerHTML=''; return; }
+  let html=auto4WSummaryHTML();
+  idxs.forEach(i=>{
+    const r=check4W(i);
+    const crit=r.issues.filter(x=>x.lvl==='crit'), warn=r.issues.filter(x=>x.lvl==='warn');
+    const tone=crit.length?'#c0392b':(warn.length?'#9a6b0f':'#27ae60');
+    const bg=crit.length?'#fdecea':(warn.length?'#fdf6e3':'#eafaf1');
+    html+=`<div style="border:1px solid #e0e0e0;border-left:4px solid ${tone};border-radius:8px;
+        background:${bg};padding:10px 14px;margin-top:10px;font-size:13px">
+      <div style="font-weight:700;color:${tone};margin-bottom:4px">
+        四週變形檢核 ${cycLabel4(i)}　—　${crit.length?`${crit.length} 項違法`:'沒有違法項目'}${warn.length?`、${warn.length} 項要確認`:''}
+      </div>
+      <div style="font-size:11px;color:#666;margin-bottom:6px">
+        法定上限按 28 天週期算，跟曆月錯開，所以這一段可能跨月。
+      </div>`;
+    if(r.rows.length){
+      html+='<div style="display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11px;color:#444;margin-bottom:6px">';
+      r.rows.forEach(x=>{ if(!x.filled) return;
+        const over=x.nsum>CAP_N4W, few=(x.ne+x.nr)<8;
+        html+=`<span>${x.emp.name} <b style="color:${over?'#c0392b':'#333'}">${x.nsum}h</b>`+
+              ` <span style="color:${few?'#c0392b':'#777'}">例${x.ne} 休${x.nr}</span>`+
+              (x.nd?` <span style="color:#777">多${x.nd}</span>`:'')+`</span>`;
+      });
+      html+='</div>';
+    }
+    [...crit,...warn].slice(0,12).forEach(f=>{
+      html+=`<div style="padding:4px 0;border-top:1px solid rgba(0,0,0,.06)">
+        <b>${f.who}</b>
+        <span style="font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;
+          background:${f.lvl==='crit'?'#f8d7da':'#fdf0d5'};color:${f.lvl==='crit'?'#c0392b':'#9a6b0f'}">
+          ${f.lvl==='crit'?'違法':'要確認'}</span>
+        ${f.rid?`<span style="font-size:10px;color:#888">${f.rid}</span>`:''}
+        ${f.msg}
+        ${f.rid&&RULES4W[f.rid]?`<div style="font-size:10px;color:#888">${RULES4W[f.rid]}</div>`:''}
+      </div>`;
+    });
+    if(crit.length+warn.length>12) html+=`<div style="font-size:11px;color:#888;padding-top:4px">…另有 ${crit.length+warn.length-12} 項</div>`;
+    html+='</div>';
+  });
+  html+=`<div style="font-size:11px;color:#9a6b0f;background:#fdf6e3;border:1px solid #f0d9a0;
+      border-radius:8px;padding:8px 12px;margin-top:10px">
+      ⚠️ 薪資頁的加班計算目前仍用「工作日 × 8 小時」當應出勤時數，
+      那是月曆版的算法，在四週變形下會算錯。改法要先確定認定基準，尚未動。
+    </div>`;
+  el.innerHTML=html;
+}
+
+// 掛到班表渲染後面
+(function(){ const _o=renderSchedule;
+  renderSchedule=function(){ _o.apply(this,arguments); try{ render4W(); }catch(e){ console.error('4W',e); } };
+})();
+
+// ===================== 四週變形自動排班 =====================
+// 跟月曆版的差別：
+//   1. 以 28 天週期為單位生成（會跨月寫入），不是以曆月為單位。
+//   2. 每人每週固定 1 天例假＋1 天休息日（指定休算休息日），四週 8 天；國定假日另外標「國」。
+//   3. 逐日派班時先看前一天幾點下班，隔不到 11 小時的班別不派。
+//   4. 本期正常工時超過 160 小時的人，從人力最鬆的日子改成空班日「多」。
+// 設定頁的「允許班別」「平日固定班」「指定上班模式」照舊有效；「每月只排休 N 天」不適用。
+const md4=x=>`${x.m}/${x.d}`;
+let _auto4wLast=null;   // 上次生成的結果摘要，顯示在班表下方
+
+// 這一期會用到的員工：期頭、期尾兩個月的在職名單取聯集
+function empsOfCycle4(ci){
+  const dates=cycDates4(ci), seen={}, out=[];
+  [dates[0],dates[27]].forEach(x=>getEmployeesForMonth(x.y,x.m).forEach(e=>{ if(!seen[e.id]){ seen[e.id]=1; out.push(e); } }));
+  return out;
+}
+// 本期哪幾天是國定假日（回傳週期內的第幾天）
+function holSet4(ci){
+  const dates=cycDates4(ci), cache={}, set=new Set();
+  dates.forEach((x,k)=>{ const key=x.y+'_'+x.m; if(!cache[key]) cache[key]=getHolidays(x.y,x.m); if(cache[key].includes(x.d)) set.add(k); });
+  return set;
+}
+function isWork4(code,shifts){ return !!(code&&shifts[code]&&!shifts[code].isOff&&code!=='國'&&+shifts[code].hours>0); }
+// 前一天下班 → 今天上班，是否隔滿 11 小時（任一邊不是工作班別就不用管）
+function gapOK4(prevCode,nextCode,shifts){
+  const a=span4(prevCode,shifts), b=span4(nextCode,shifts);
+  if(!a||!b) return true;
+  return (1440+b.st)-a.en >= GAP4W;
+}
+
+function autoGen4W(ci, input){
+  const dates=cycDates4(ci), shifts=getShifts(), rules=getAutoRules(), dayReq=getDayReq();
+  const emps=empsOfCycle4(ci), hol=holSet4(ci), get=cellReader4();
+  const cannot=input.cannotWork||{}, workDays=input.workDays||{};
+  const notes=[], short=[], trimmed=[];
+  const out={}; emps.forEach(e=>out[e.id]=new Array(CYCLEN4W).fill(''));
+  const wdOf=k=>weekday(dates[k].y,dates[k].m,dates[k].d);
+  const dtOf=k=>{ const w=wdOf(k); return w===6?'saturday':w===0?'sunday':'weekday'; };
+  const empR=e=>(rules.empRules||{})[e.id]||{};
+  const isFixed=e=>!!(empR(e).weekdayShift&&empR(e).offWeekends);
+  const isDesig=e=>!!empR(e).designatedWorkMode;
+  const OFF='__off';   // 暫時記號：確定休假，但還沒決定是例假還是休息日
+
+  // 上一期最後一天、下一期第一天（若已有班表），算 11 小時間隔用
+  const before=dfrom4(CYCBASE4W+ci*CYCLEN4W-1), after=dfrom4(CYCBASE4W+(ci+1)*CYCLEN4W);
+  const prevOf=(e,k)=> k>0 ? out[e.id][k-1] : get(before.y,before.m,before.d,e.id);
+  const nextOf=(e,k)=> k<27 ? out[e.id][k+1] : get(after.y,after.m,after.d,e.id);
+
+  // ── 步驟1：指定休、固定班、指定上班 ──
+  emps.forEach(e=>{
+    const a=out[e.id], r=empR(e);
+    (cannot[e.id]||[]).forEach(k=>{ if(k>=0&&k<CYCLEN4W) a[k]='指'; });
+    if(isFixed(e)){
+      // 平日固定班：週日例假、週六休息日，國定假日標國
+      for(let w=0;w<4;w++){
+        let needE=0, needR=0;
+        for(let k=w*7;k<w*7+7;k++){ if(a[k]) continue; const d=wdOf(k);
+          if(hol.has(k)){ a[k]='國'; if(d===0) needE++; else if(d===6) needR++; }
+          else if(d===0) a[k]='例'; else if(d===6) a[k]='休'; }
+        // 國定假日剛好是他的例假／休息日：要另給補假（施行細則 §23-1），補在同週最早的平日
+        for(let k=w*7;k<w*7+7&&(needE||needR);k++){ if(a[k]) continue;
+          if(needE){ a[k]='例'; needE--; } else { a[k]='休'; needR--; }
+          notes.push(`${e.name}：國定假日碰到例假／休息日，${md4(dates[k])} 補假`); }
+        for(let k=w*7;k<w*7+7;k++) if(!a[k]) a[k]=r.weekdayShift;
+      }
+    } else if(isDesig(e)){
+      const shift=(r.allowedShifts&&r.allowedShifts.length)?r.allowedShifts[0]:'C';
+      for(let k=0;k<CYCLEN4W;k++){ if(a[k]) continue;
+        if(hol.has(k)) a[k]='國'; else if((workDays[e.id]||[]).includes(k)) a[k]=shift; else a[k]=OFF; }
+    }
+  });
+  const general=emps.filter(e=>!isFixed(e)&&!isDesig(e));
+  general.forEach(e=>{ for(let k=0;k<CYCLEN4W;k++) if(hol.has(k)&&!out[e.id][k]) out[e.id][k]='國'; });
+
+  // ── 步驟2：一般員工排休。每週至少 1 天；正職四週共 8 天（指定休算在內）；計時照舊每週 2 天 ──
+  // demand[k]＝當天班別需求總人數，扣掉固定班／指定上班已補上的
+  const demand=[], committed=new Array(CYCLEN4W).fill(0);
+  for(let k=0;k<CYCLEN4W;k++){
+    const tot=(dayReq[dtOf(k)]||[]).reduce((s,r)=>s+r.count,0);
+    let covered=0; emps.filter(e=>!general.includes(e)).forEach(e=>{ if(isWork4(out[e.id][k],shifts)) covered++; });
+    demand[k]=hol.has(k)?0:Math.max(0,tot-covered);
+  }
+  const budget={}, used={};
+  general.forEach(e=>{ used[e.id]=0; budget[e.id]=e.isFullTime?8:null;
+    if(empR(e).monthlyRestLimit!=null) notes.push(`${e.name}：「每月只排休 N 天」在四週變形版不適用，已照每週例1＋休1 排`); });
+  for(let w=0;w<4;w++){
+    const week=[]; for(let k=w*7;k<w*7+7;k++) week.push(k);
+    // 指定休最多的人彈性最小，先處理
+    const sorted=[...general].sort((x,y)=>{
+      const xr=week.filter(k=>out[x.id][k]==='指').length, yr=week.filter(k=>out[y.id][k]==='指').length; return yr-xr; });
+    sorted.forEach(e=>{
+      const a=out[e.id];
+      const exist=week.filter(k=>a[k]==='指').length;
+      const avail=week.filter(k=>!a[k]);
+      let need=Math.max(0,2-exist);
+      if(budget[e.id]!=null){
+        const remaining=budget[e.id]-used[e.id]-exist;
+        need=Math.min(need,Math.max(0,Math.ceil(remaining/(4-w))));
+      }
+      if(exist===0&&need===0) need=1;   // 每週至少一天休：例假才擺得下，連續出勤也不會破 12 天
+      need=Math.min(need,avail.length);
+      const score=k=>committed[k]-demand[k];   // 越大＝人力越鬆，越適合排休
+      const pick=[...avail].sort((p,q)=>score(q)-score(p)).slice(0,need);
+      avail.forEach(k=>{ if(pick.includes(k)) a[k]=OFF; else committed[k]++; });
+      used[e.id]+=exist+pick.length;
+    });
+  }
+
+  // ── 步驟3：休假貼標籤。每週第一個休假日當例假，其餘為休息日；每 14 天要有 2 天例假 ──
+  emps.forEach(e=>{
+    const a=out[e.id];
+    for(let w=0;w<4;w++){
+      let hasE=false;
+      for(let k=w*7;k<w*7+7;k++) if(a[k]==='例') hasE=true;
+      for(let k=w*7;k<w*7+7;k++){ if(a[k]!==OFF) continue; if(!hasE){ a[k]='例'; hasE=true; } else a[k]='休'; }
+    }
+    [0,14].forEach(s=>{
+      let cnt=0; for(let k=s;k<s+14;k++) if(a[k]==='例') cnt++;
+      for(let k=s;k<s+14&&cnt<2;k++){ if(a[k]==='休'){ a[k]='例'; cnt++; } }
+      for(let k=s;k<s+14&&cnt<2;k++){ if(a[k]==='指'){ a[k]='例'; cnt++;
+        notes.push(`${e.name}：${md4(dates[k])} 的指定休改標為例假（每二週要有 2 天例假）`); } }
+      if(cnt<2) notes.push(`${e.name}：${md4(dates[s])} 起 14 天內只有 ${cnt} 天例假，請手動補`);
+    });
+  });
+
+  // ── 步驟4：逐日派班，前後一天隔不到 11 小時的班別不派 ──
+  const allowedOf=e=>empR(e).allowedShifts||[];
+  const workCodes=Object.keys(shifts).filter(c=>isWork4(c,shifts));
+  const fitsGap=(e,k,code)=>gapOK4(prevOf(e,k),code,shifts)&&gapOK4(code,nextOf(e,k),shifts);
+  for(let k=0;k<CYCLEN4W;k++){
+    if(hol.has(k)) continue;
+    const reqs=(dayReq[dtOf(k)]||[]).map(r=>({...r,rem:r.count}));
+    emps.filter(e=>!general.includes(e)).forEach(e=>{ const c=out[e.id][k]; if(!isWork4(c,shifts)) return;
+      for(const r of reqs){ if(r.shifts.includes(c)&&r.rem>0){ r.rem--; break; } } });
+    const workers=general.filter(e=>!out[e.id][k]);
+    const assigned=new Set();
+    reqs.sort((p,q)=>p.shifts.length-q.shifts.length);   // 選擇少的需求先派
+    // 第一輪：只派「允許班別」符合的人；第二輪：還缺的需求才拿其他還沒派的人補
+    const pending=[];
+    for(const req of reqs){
+      for(let i=0;i<req.rem;i++){
+        let pick=null, code=null;
+        for(const e of workers){ if(assigned.has(e.id)) continue;
+          const c=req.shifts.find(s=>allowedOf(e).includes(s)&&fitsGap(e,k,s)); if(c){ pick=e; code=c; break; } }
+        if(!pick){ pending.push(req); break; }
+        out[pick.id][k]=code; assigned.add(pick.id); req.rem--; i--;
+      }
+    }
+    for(const req of pending){
+      for(let i=0;i<req.rem;i++){
+        let pick=null, code=null;
+        for(const e of workers){ if(assigned.has(e.id)) continue;
+          const c=req.shifts.find(s=>fitsGap(e,k,s)); if(c){ pick=e; code=c; break; } }
+        if(!pick){ short.push(`${md4(dates[k])} ${req.label} 缺 ${req.rem-i} 人`); break; }
+        out[pick.id][k]=code; assigned.add(pick.id);
+      }
+    }
+    // 其餘要上班的人：先當日需求裡的允許班別，再任何允許班別，再當日需求班別；都隔不到 11 小時就排「多」
+    const dayShifts=[...new Set(reqs.flatMap(r=>r.shifts))];
+    workers.forEach(e=>{ if(assigned.has(e.id)) return;
+      const al=allowedOf(e);
+      const cands=[...al.filter(s=>dayShifts.includes(s)), ...al, ...dayShifts, ...workCodes].filter(s=>isWork4(s,shifts));
+      const c=cands.find(s=>fitsGap(e,k,s));
+      if(c) out[e.id][k]=c;
+      else { out[e.id][k]='多'; notes.push(`${e.name}：${md4(dates[k])} 沒有班別能隔滿 11 小時，排成空班日「多」`); }
+      assigned.add(e.id);
+    });
+  }
+
+  // ── 步驟5：本期正常工時超過 160 的人，從人力最鬆的日子改成空班日「多」 ──
+  emps.forEach(e=>{
+    const a=out[e.id];
+    const sum=()=>a.reduce((s,c)=>s+(isWork4(c,shifts)?+shifts[c].hours:0),0);
+    let guard=0;
+    while(sum()>CAP_N4W&&guard++<CYCLEN4W){
+      const excess=sum()-CAP_N4W;
+      // 先試換短班：同一天換成同需求群組或允許班別裡較短的班，扣掉的時數剛好蓋過超出量最好
+      let swap=null;
+      for(let k=0;k<CYCLEN4W;k++){ if(!isWork4(a[k],shifts)) continue;
+        const cur=a[k], h=+shifts[cur].hours;
+        const grp=(dayReq[dtOf(k)]||[]).filter(r=>r.shifts.includes(cur)).flatMap(r=>r.shifts);
+        [...new Set([...grp, ...allowedOf(e)])].forEach(c=>{
+          if(!isWork4(c,shifts)) return; const cut=h-(+shifts[c].hours);
+          if(cut<=0||!fitsGap(e,k,c)) return;
+          // 夠蓋過超出量的，取最接近的；都不夠就取扣最多的，再繞一圈
+          const better=!swap || (cut>=excess ? (swap.cut<excess||cut<swap.cut) : (swap.cut<excess&&cut>swap.cut));
+          if(better) swap={k,c,cut,cur}; }); }
+      if(swap){ a[swap.k]=swap.c; trimmed.push(`${e.name} ${md4(dates[swap.k])} ${swap.cur}→${swap.c}（少 ${swap.cut}h）`); continue; }
+      let best=-1, bestScore=-Infinity;
+      for(let k=0;k<CYCLEN4W;k++){ if(!isWork4(a[k],shifts)) continue;
+        const onDuty=emps.filter(x=>isWork4(out[x.id][k],shifts)).length;
+        const tot=(dayReq[dtOf(k)]||[]).reduce((s,r)=>s+r.count,0);
+        const h=+shifts[a[k]].hours;
+        // 人力越多餘越優先；時數剛好蓋過超出量的最好，不夠蓋的次之
+        const sc=(onDuty-tot)*100-(h>=excess?(h-excess):(excess-h)+50);
+        if(sc>bestScore){ bestScore=sc; best=k; } }
+      if(best<0) break;
+      const orig=a[best]; a[best]='多'; trimmed.push(`${e.name} ${md4(dates[best])}（原 ${orig} ${+shifts[orig].hours}h）`);
+    }
+  });
+
+  return {out, dates, emps, notes, short, trimmed};
+}
+
+// ── 自動排班視窗（四週版）──
+function openAuto4W(){
+  const y=state.curYear, m=state.curMonth;
+  const idxs=cyclesOfMonth(y,m);
+  if(!idxs.length){ showToast('這個月在 2026/10/4 之前，還沒進入四週變形週期', 3500); return; }
+  const emps=getEmployeesForMonth(y,m);
+  if(!emps.length){ showToast('本月沒有員工'); return; }
+  // 預設選本月天數最多的那一期
+  const cnt={}; for(let d=1;d<=daysInMonth(y,m);d++){ const i=cycIdx4(y,m,d); cnt[i]=(cnt[i]||0)+1; }
+  const def=idxs.reduce((a,b)=>(cnt[b]||0)>(cnt[a]||0)?b:a, idxs[0]);
+  const sel=document.getElementById('auto4w-cycle');
+  sel.innerHTML=idxs.map(i=>`<option value="${i}" ${i===def?'selected':''}>${cycLabel4(i)}</option>`).join('');
+  renderAuto4WBody(def);
+  openModal('auto4w-overlay');
+}
+
+function renderAuto4WBody(ci){
+  const dates=cycDates4(ci), emps=empsOfCycle4(ci), hol=holSet4(ci), rules=getAutoRules(), get=cellReader4();
+  const months=[...new Set(dates.map(x=>x.y+'_'+x.m))];
+  const locked=months.map(s=>s.split('_').map(Number)).filter(([y,m])=>isMonthLocked(y,m));
+
+  function empRow(emp){
+    const r=(rules.empRules||{})[emp.id]||{};
+    const isWorkMode=!!r.designatedWorkMode;
+    const isFixedSchedule=!isWorkMode&&!!(r.weekdayShift&&r.offWeekends);
+    const allowed=r.allowedShifts||['C'];
+    let btns='';
+    dates.forEach((x,k)=>{
+      const c=get(x.y,x.m,x.d,emp.id);
+      const w=weekday(x.y,x.m,x.d);
+      const isRed=w===0||w===6||hol.has(k);
+      const isSel=isWorkMode?(allowed.includes(c)||c==='C'):(c==='指');
+      const label=`${x.m}/${x.d}`;
+      if(isFixedSchedule&&isRed){
+        btns+=`<button class="auto-day-btn red-day" style="width:42px;opacity:.35;cursor:default" disabled>${label}</button>`; return; }
+      const selColor=isWorkMode?'#27ae60':'#e74c3c';
+      const cls='auto-day-btn'+(isRed&&!isWorkMode?' red-day':'')+(isSel?' selected':'');
+      const bg=isSel?`background:${selColor};color:#fff;border-color:${selColor}`:'';
+      btns+=`<button class="${cls}" data-k="${k}" data-mode="${isWorkMode?'work':'leave'}" style="width:42px;${bg}"
+        onclick="toggleLeaveDay('${emp.id}',${k},this)">${label}</button>`;
+      if(k%7===6) btns+='<span style="flex-basis:100%;height:0"></span>';
+    });
+    const tag=emp.isFullTime
+      ?`<span style="font-size:10px;color:#e67e22;margin-left:4px">正職</span>`
+      :`<span style="font-size:10px;color:#3498db;margin-left:4px">計時</span>`;
+    const hint=isWorkMode
+      ?`<span style="font-size:11px;font-weight:600;color:#27ae60;margin-left:6px">點選上班的日期</span>`
+      :isFixedSchedule
+      ?`<span style="font-size:11px;font-weight:600;color:#8e44ad;margin-left:6px">固定：平日${r.weekdayShift}班，週日例假、週六休息日｜可點指定休</span>`
+      :`<span style="font-size:11px;color:var(--gray);margin-left:6px">點選不能上班的日期（算休息日）</span>`;
+    return `<div style="padding:10px 0;border-bottom:1px solid var(--border)">
+      <div style="font-weight:600;font-size:14px;margin-bottom:6px">${emp.name}${tag}${hint}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:3px" id="leaves4w-${emp.id}">${btns}</div>
+    </div>`;
+  }
+
+  const ft=emps.filter(e=>e.isFullTime), pt=emps.filter(e=>!e.isFullTime);
+  let rows='';
+  if(ft.length) rows+=`<div style="font-size:11px;font-weight:700;color:#c0392b;padding:8px 0 2px">正職人員</div>`+ft.map(empRow).join('');
+  if(pt.length) rows+=`<div style="font-size:11px;font-weight:700;color:#1f6aa5;padding:12px 0 2px">計時人員</div>`+pt.map(empRow).join('');
+  const s=dates[0], e=dates[27];
+  document.getElementById('auto4w-body').innerHTML=`
+    <div style="background:#f0e8f8;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:13px;line-height:1.6">
+      📅 本期 <strong>${md4(s)}–${md4(e)}</strong> 共 28 天。每人排 <strong>例假 4 天＋休息日 4 天</strong>（指定休算休息日），
+      國定假日 <strong>${hol.size}</strong> 天另外標「國」。班別依「設定 → 班別需求」，前一天下班到今天上班隔不到 11 小時的班不派，
+      本期正常工時最多 160 小時，超過的日子改成空班日「多」。
+    </div>
+    ${locked.length?`<div style="margin-bottom:10px;padding:10px;background:#fdecea;border-radius:8px;font-size:12px;color:#c0392b">🔒 ${locked.map(([y,m])=>`${y}年${m}月`).join('、')} 已鎖定，本期無法生成。</div>`:''}
+    ${rows}
+    <div style="margin-top:12px;padding:10px;background:#fdecea;border-radius:8px;font-size:12px;color:#c0392b">
+      ⚠️ 生成後會覆蓋 ${md4(s)}–${md4(e)} 這 28 天所有員工的班表；同月其他日期不動。
+    </div>`;
+}
+
+// 讀視窗裡勾選的日子（回傳週期內第幾天）
+function readAuto4WInput(emps){
+  const cannotWork={}, workDays={}, rules=getAutoRules();
+  emps.forEach(e=>{
+    const box=document.getElementById(`leaves4w-${e.id}`); if(!box) return;
+    const ks=[...box.querySelectorAll('.auto-day-btn.selected')].map(b=>+b.dataset.k);
+    if(((rules.empRules||{})[e.id]||{}).designatedWorkMode) workDays[e.id]=ks; else cannotWork[e.id]=ks;
+  });
+  return {cannotWork, workDays};
+}
+
+// 把 28 天結果寫回各月班表；只動本期的日期
+function writeCycle4W(dates, emps, out){
+  const months=[...new Set(dates.map(x=>x.y+'_'+x.m))].map(s=>s.split('_').map(Number));
+  for(const [y,m] of months) if(blockIfLocked(y,m)) return false;
+  months.forEach(([y,m])=>{
+    const sch=getSchedule(y,m);
+    emps.forEach(e=>{ if(!sch[e.id]) sch[e.id]={};
+      dates.forEach((x,k)=>{ if(x.y!==y||x.m!==m) return;
+        const c=out[e.id][k]; if(c) sch[e.id][x.d]=c; else delete sch[e.id][x.d]; }); });
+    saveSchedule(y,m,sch);
+  });
+  return true;
+}
+
+function runAuto4W(){
+  const ci=+document.getElementById('auto4w-cycle').value;
+  const emps=empsOfCycle4(ci);
+  const r=autoGen4W(ci, readAuto4WInput(emps));
+  if(!writeCycle4W(r.dates, r.emps, r.out)) return;
+  const chk=check4W(ci), crit=chk.issues.filter(x=>x.lvl==='crit').length;
+  _auto4wLast={ci, at:new Date(), short:r.short, trimmed:r.trimmed, notes:r.notes, crit};
+  closeModal('auto4w-overlay');
+  renderSchedule();
+  showToast(`✅ ${cycLabel4(ci).split('　')[0]} 已生成｜缺人 ${r.short.length} 處、改多 ${r.trimmed.length} 天、違法 ${crit} 項`, 4000);
+}
+
+// 只代入指休／指定上班，不生成；跟月曆版一樣：取消勾選的清掉，其餘日期不動
+function applyDesignated4W(){
+  const ci=+document.getElementById('auto4w-cycle').value;
+  const dates=cycDates4(ci), emps=empsOfCycle4(ci), rules=getAutoRules(), get=cellReader4();
+  const input=readAuto4WInput(emps), out={};
+  let touched=0;
+  emps.forEach(e=>{
+    const r=(rules.empRules||{})[e.id]||{};
+    const a=dates.map(x=>get(x.y,x.m,x.d,e.id));
+    if(r.designatedWorkMode){
+      const allowed=new Set(r.allowedShifts&&r.allowedShifts.length?r.allowedShifts:['C']);
+      const shift=[...allowed][0];
+      const sel=new Set(input.workDays[e.id]||[]);
+      a.forEach((c,k)=>{ if(sel.has(k)){ if(!allowed.has(c)){ a[k]=shift; touched++; } } else if(allowed.has(c)){ a[k]=''; touched++; } });
+    } else {
+      const sel=new Set(input.cannotWork[e.id]||[]);
+      a.forEach((c,k)=>{ if(sel.has(k)){ if(c!=='指'){ a[k]='指'; touched++; } } else if(c==='指'){ a[k]=''; touched++; } });
+    }
+    out[e.id]=a;
+  });
+  if(!writeCycle4W(dates, emps, out)) return;
+  closeModal('auto4w-overlay');
+  renderSchedule();
+  showToast(`✅ 已代入指休/指定上班（更動 ${touched} 格，未生成班表）`);
+}
+
+// 上次生成的摘要，掛在四週檢核面板上面
+function auto4WSummaryHTML(){
+  const r=_auto4wLast; if(!r) return '';
+  const li=(arr,label,color)=>arr.length?`<div style="margin-top:4px"><b style="color:${color}">${label} ${arr.length}</b>
+      <div style="font-size:11px;color:#555">${arr.slice(0,10).join('；')}${arr.length>10?`；…另 ${arr.length-10} 項`:''}</div></div>`:'';
+  return `<div style="border:1px solid #d9c8ec;border-left:4px solid #8e44ad;border-radius:8px;background:#f7f2fb;padding:10px 14px;margin-top:10px;font-size:13px">
+    <div style="font-weight:700;color:#8e44ad">✨ 上次自動排班 ${cycLabel4(r.ci)}</div>
+    ${r.short.length+r.trimmed.length+r.notes.length===0?'<div style="font-size:12px;color:#27ae60;margin-top:4px">需求全部補滿，沒有要調整的地方。</div>':''}
+    ${li(r.short,'缺人','#c0392b')}
+    ${li(r.trimmed,'超過 160 小時改成「多」','#9a6b0f')}
+    ${li(r.notes,'提醒','#555')}
+  </div>`;
+}
+
+</script>
+</body>
+</html>
